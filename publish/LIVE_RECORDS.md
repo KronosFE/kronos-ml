@@ -1,6 +1,6 @@
 # KODEX — live deposit records (per code)
 
-Status 2026-09-10: **Zenodo, OSF, Figshare = published** (26 each). **Harvard Dataverse = 26 submitted for curator review** (DOIs reserved; publish on Harvard approval). GitHub / PyPI / Hugging Face / Internet Archive = pending.
+Status 2026-09-10: **Zenodo, OSF, Figshare = published** (26 each). **Harvard Dataverse = 25 submitted for curator review** (DOIs reserved; publish on Harvard approval) — **KLAW (doi:10.7910/DVN/ANAFXK) still to submit**. GitHub / PyPI / Hugging Face / Internet Archive = pending.
 
 Author: Ford, P. I. · ORCID 0000-0003-0395-1752 · Kronos Fusion Energy · Apache-2.0. Each record's homepage = kronosfusionenergy.com/kodex/<code>.
 

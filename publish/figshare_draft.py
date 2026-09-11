@@ -87,7 +87,9 @@ def main():
             body = {"title": m["title"], "description": m["description"],
                     "defined_type": "software", "tags": _tags(m), "references": _refs(m),
                     # explicit author (ORCID is linked via the uploading Figshare account)
-                    "authors": [{"name": "Ford, P. I."}]}
+                    "authors": [{"name": "Ford, P. I."}],
+                    # LEAF categories only — parent 29152 is not assignable (per f7's live run)
+                    "categories": [30202, 29173, 26836]}
             r = s.post(f"{API}/account/articles", headers=h, json=body)
             if not r.ok:
                 print(f"[figshare] {name}: create FAILED {r.status_code}: {r.text[:400]}")

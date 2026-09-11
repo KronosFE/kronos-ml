@@ -53,12 +53,13 @@ def _dataset_json(m, contact_email):
               _prim("keyword", kws, True, "compound")]
     if pubs:
         fields.append(_prim("publication", pubs, True, "compound"))
-    # NOTE: no dataset-level `license` block. Harvard defaults license-less datasets to CC0,
-    # so Apache-2.0 is asserted in the description (above), CITATION.cff and the LICENSE file.
-    # To set the dataset LICENSE FIELD to Apache-2.0: GET {BASE}/api/licenses to confirm it is
-    # installed, then PUT the license onto each draft version before curator approval (the
-    # published version is immutable). Left out of create because it is not guaranteed installed.
-    return {"datasetVersion": {"metadataBlocks": {"citation": {"fields": fields}}}}
+    # Harvard's license picker has no Apache-2.0, and a license-less dataset defaults to CC0.
+    # So set Custom Terms of Use = Apache-2.0 text (per f7's live run) to override the CC0 default.
+    apache_terms = ("Licensed under the Apache License, Version 2.0 "
+                    "(http://www.apache.org/licenses/LICENSE-2.0). The full license text is in the "
+                    "bundled LICENSE file; citation metadata in CITATION.cff.")
+    return {"datasetVersion": {"termsOfUse": apache_terms,
+                               "metadataBlocks": {"citation": {"fields": fields}}}}
 
 
 def main():
