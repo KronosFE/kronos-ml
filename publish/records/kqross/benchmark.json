@@ -1,18 +1,19 @@
 {
   "member": "KQROSS",
-  "verdict": "no crossover this decade; survives optimistic corner",
-  "result_type": "validated negative result (BUILT)",
-  "caveat": "MANDATORY: no quantum advantage this decade",
-  "live": {
-    "file": "track7_quantum_resources/crossover_verdict.csv",
-    "n_kernels": 3,
-    "columns": [
-      "kernel",
-      "crossover_problem_size",
-      "interesting_problem_size",
-      "logical_qubits_at_interesting",
-      "T_count_at_interesting",
-      "meets_2030_bar"
-    ]
+  "live_resource_estimate": {
+    "method": "surface-code overhead (d=25) + qubitization T-counts + classical exact-CI, order-of-magnitude literature-scaled",
+    "crossover_N_spin_orbitals": 50,
+    "logical_qubits_needed": 50,
+    "physical_qubits_needed": "~6e+04",
+    "surface_code_phys_per_logical": 1250,
+    "quantum_runtime_hours_at_crossover": 0.03,
+    "roadmap_year_reach_logical": 2032,
+    "hardware_today": "~1e2-1e3 physical qubits, no error-corrected logical qubits",
+    "verdict": "REAL FT resource estimate: classical<->quantum crossover at N~50 spin-orbitals needs 50 logical -> ~6e+04 physical qubits and ~0.03 h/run. Today's hardware = ~1e2-1e3 physical qubits, no error-corrected logical qubits; the roadmap reaches that logical count ~2032. NO fault-tolerant quantum advantage for fusion this decade \u2014 a validated negative result."
+  },
+  "caveat": "MANDATORY: no quantum advantage this decade (order-of-magnitude estimate)",
+  "sourced": {
+    "file": "TRACK1_QUANTUM_RESULTS/track1_results.json (A1/A3/A9)",
+    "note": "independent Track-1: crossover N~40, ~1e5-1e6 phys qubits, mid/late-2030s"
   }
 }

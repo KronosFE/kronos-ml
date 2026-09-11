@@ -10,4 +10,4 @@
 - **note:** fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulence
 - **available:** True
 
-Benchmark headline: learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.496 ms/field; sourced FNO 2.5% vs 1% bar
+Benchmark headline: learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.709 ms/field; sourced FNO 2.5% vs 1% bar

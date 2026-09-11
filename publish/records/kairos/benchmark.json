@@ -11,7 +11,7 @@
     "escapes": 0,
     "catch_rate": 1.0
   },
-  "live_mpc_step_us": 89.7,
+  "live_mpc_step_us": 96.1,
   "sourced": {
     "file": "track5_control/clamp_activation_stats.csv",
     "headline": "0 escapes / 150k steps / 3000 injected (AC-25); tracking <5%"

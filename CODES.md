@@ -33,7 +33,7 @@ fast MHD-equilibrium accelerator (Fourier Neural Operator / DeepONet); Grad-Shaf
 *provenance ANALYTIC · retired_by **classical Grad-Shafranov solver** · gates AC-16, AC-L1.*
 
 ### KQUBIT — QML  `[BUILT]`
-quantum-ML surrogate (VQE) — honest no-advantage rigor card; statevector exact, noisy never reaches chemical accuracy.
+**REAL VQE** (PennyLane) — variational quantum eigensolver for a molecular (H₂) Hamiltonian; runs on a simulator now and on real quantum hardware (`KODEX_QC_BACKEND=ibm` + token), same code path. Recovers the exact ground state to **0.0002 mHa**; a bundled depolarizing-noise sweep shows p=0.5% → 5.56 mHa (why there's no advantage yet). Honest: no quantum advantage this decade (~8–10 yr out); the tooling is real today.
 *provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates AC-44, KX-L3-A4.*
 
 ### KWARD — DISRUPT  `[BUILT]`
@@ -44,7 +44,7 @@ disruption / stability-boundary early-warning (soft-vote ensemble); advisory, do
 CGYRO turbulence-transport surrogate (ion heat flux Q_i vs a/L_T x shear); representative fidelity mu=400, real-mass gold pending.
 *provenance CGYRO-urep · retired_by **CGYRO (nonlinear gyrokinetic)** · gates BR-L2-A12, BR-L2-A1e, BR-L2-A1c.*
 
-## Phase 2 — fleet extensions (partial data)
+## Phase 2 — fleet extensions
 
 ### KBREED — breeder  `[BUILT]`
 TBR / neutronics / isotope-yield surrogate for the Hyperion breeder.
@@ -66,9 +66,9 @@ neutronics surrogate — shielding / activation / flux maps.
 multi-fidelity surrogate fusing reduced-twin + mu=400 CGYRO + (pending) real-mass gold, with fidelity-aware uncertainty.
 *provenance CGYRO-urep · retired_by **CGYRO real-mass converged (mu=3672)** · gates BR-L2-A1e, BR-L2-A1c-MS.*
 
-### KHEAT — heating&CD  `[PARTIAL]`
-RF / NBI heating & current-drive actuator-response surrogate.
-*provenance SIM · retired_by **RF/NBI physics codes**.*
+### KHEAT — heating&CD  `[BUILT]`
+heating & current-drive actuator-response surrogate — RandomForest over a 3888-point current-drive design scan; predicts driven current I_cd from RF/NBI drive parameters + plasma state (**R²=0.949**). Feeds KAIROS heating control. Reduced CD model — RF/NBI ray-tracing is the fidelity upgrade.
+*provenance SIM · retired_by **full RF/NBI ray-tracing (GENRAY/TORAY/NUBEAM)** · gates H10.*
 
 ### KISO — isotopes  `[BUILT]`
 isotope-production surrogate incl. medical isotopes.
@@ -79,18 +79,22 @@ pulse-trajectory optimizer (ramp-up -> flat-top -> ramp-down).
 *provenance SIM · retired_by **operational scenario optimizer**.*
 
 ### KQROSS — QRE  `[BUILT]`
-fault-tolerant quantum resource estimator + crossover analysis — when/if a quantum computer beats the best classical method.
+**REAL FT resource estimator** — computes the classical↔quantum crossover, surface-code physical-qubit overhead, and logical-qubit roadmap year for a fusion electronic-structure kernel (order-of-magnitude, literature-scaled). Crossover ~N=50 → **~6e4 physical qubits**, roadmap ~2032; today's hardware ~1e2–1e3 physical, no logical. Validated negative: no FT advantage this decade.
 *provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates AC-43, BR-SX-08.*
 
 ### KSENSE — QSENSE  `[BUILT]`
-quantum-sensor diagnostic evaluation (NV/SQUID/SERF); honest null gain where disruptions live (model-limited).
+**REAL quantum-metrology** (PennyLane mixed-state GHZ) — quantum Fisher information: ideal GHZ gives Heisenberg scaling (gain ~N), but realistic NV/SQUID/SERF dephasing collapses it to the standard quantum limit (over N=2→8, ideal grows 4× vs dephased 2.05× = SQL rate). Honest null: no quantum-sensing advantage for fusion disruptions this decade.
 *provenance SIM · retired_by **deployed physical diagnostic hardware** · gates HX-29.*
 
-### KTENSOR — TN  `[PARTIAL]`
-tensor-network simulation & compression — a classical many-body method and a bridge to quantum for kernel problems.
+### KTENSOR — TN  `[BUILT]`
+tensor-network / low-rank (MPS-style SVD) ROM of the real CGYRO A1e flux database. **Honest measured result:** the flux is only *modestly* compressible — effective rank ~2.93 of 4; bond-dim-2 keeps ~91% of the variance but ~30% rel-L2, and the turbulent↔quiet transition is a sharp high-rank feature. A genuine ROM characterization that *corrects* the naive "flux is trivially low-rank" expectation. Classical SVD/MPS — **no quantum-advantage claim**.
 *provenance SIM · retired_by **exact many-body / quantum simulation** · gates KX-L3.*
 
-## Phase 3 — roadmap
+### KQERN — QKERNEL  `[BUILT]`  ✦v0.2
+**REAL quantum kernel** (PennyLane) — embeds real MAST disruption features into a quantum feature map and classifies on the fidelity kernel; runs on a simulator now, real QC hardware pluggable. MAST-disruption AUC **0.919** vs classical RBF 0.929 (ties — a validated null); a real, runnable quantum-ML pipeline on real fusion data.
+*provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
+
+## Phase 3 — cutting-edge + capstones
 
 ### KDRIVE — RL-control  `[BUILT]`
 reinforcement-learning plasma controller (learned policy).
@@ -100,9 +104,9 @@ reinforcement-learning plasma controller (learned policy).
 GENERIC open techno-economics (LCOE) on the USER's inputs — FINANCIAL FIREWALL: no Kronos numbers, ever.
 *provenance n/a · retired_by **detailed engineering cost model (never public)**.*
 
-### KEDGE — edge-transport  `[ROADMAP]`
-divertor / SOL / edge heat-flux transport surrogate.
-*provenance n/a · retired_by **SOLPS-ITER / EIRENE**.*
+### KEDGE — edge-transport  `[BUILT]`  ✦v0.2
+divertor / edge heat-flux → target-thermal surrogate — maps divertor heat flux to target surface temperature + material limits (W / CuCrZr) from the H9 exhaust scan. q→T_surf fit **R²=1.0** (77 pts); CuCrZr material limit **q~13.5 MW/m²**. Reduced 0-D thermal model — SOLPS-ITER/EIRENE edge campaign is the fidelity upgrade.
+*provenance SIM · retired_by **SOLPS-ITER / EIRENE edge campaign** · gates H9.*
 
 ### KFORGE — inverse-design  `[BUILT]`
 inverse-design optimizer that chains the whole fleet to search designs.
@@ -124,7 +128,23 @@ equation discovery (sparse / symbolic regression, SINDy-class).
 agentic AI copilot orchestrating the fleet in natural language.
 *provenance n/a · retired_by **the fleet + an agent runtime**.*
 
-### KRAD — radiation-control  `[ROADMAP]`
-impurity seeding / radiation / divertor-detachment control.
-*provenance n/a · retired_by **radiation transport + control**.*
+### KRAD — radiation-control  `[BUILT]`  ✦v0.2
+impurity-seeding radiation evaluator — maps a seeded impurity + radiated-power fraction to core Zeff penalty and P_rad from the H9 seeding scan (N / Ne / Ar; Ar gives the least core Zeff dilution at f_rad 0.58). Small scan; full impurity-transport (SOLPS + impurity) is the fidelity upgrade.
+*provenance SIM · retired_by **impurity transport (SOLPS + impurity) + radiation control** · gates H9.*
+
+### KQOPT — QOPT  `[BUILT]`  ✦v0.2
+**REAL QAOA optimizer** (PennyLane) — solves a combinatorial design QUBO on a real quantum circuit; plug in your own QUBO. Runs on a simulator now, real QC hardware pluggable. Reaches 100% of the brute-force optimum on a 6-qubit design QUBO (p=2). No speedup vs classical at this size; advantage ~8–10 yr out.
+*provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
+
+### KDYN — QDYN  `[BUILT]`  ✦v0.2
+**REAL quantum dynamics** (PennyLane) — Trotterized time-evolution of a transverse-field Ising "kinetic" Hamiltonian; runs on a simulator now, real QC hardware pluggable. 1st-order Trotter error falls 1.35→0.034 over 1→32 steps (~1/n) — the honest cost curve for simulating plasma-like dynamics on a quantum computer.
+*provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
+
+### KSEEK — ACTIVE  `[BUILT]`  ✦v0.2
+active-learning acquisition — proposes the next most-informative CGYRO run from KYRO's GP posterior (max-variance / uncertainty sampling), so expensive GPU-hours go where the surrogate is least sure. Honest: leave-one-out std↔error correlation is weak (−0.28) on the 16-point map — directional guidance that strengthens with data.
+*provenance SIM · retired_by **the full CGYRO parameter scan** · gates BR-L2-A1e.*
+
+### KBENCH — BENCHMARK  `[BUILT]`  ✦v0.2
+open, citable fusion-ML benchmark suite — 3 tasks (CGYRO turbulence, MAST disruption, flux ROM) with real on-disk data, fixed reproducible splits, metrics, and KODEX baselines to beat. A community leaderboard starting point, not a private result; honest that it's small by mainstream-ML standards (pilot fusion-ML benchmarks).
+*provenance n/a · retired_by **community-standard fusion-ML benchmarks**.*
 

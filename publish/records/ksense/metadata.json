@@ -2,8 +2,8 @@
   "kname": "KSENSE",
   "page": "https://kronosfusionenergy.com/kodex/ksense",
   "title": "KODEX \u2014 KSENSE: QSENSE",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
   "language": "eng",
   "upload_type": "software",
   "creators": [
@@ -59,7 +59,7 @@
       "resource_type": "dataset"
     }
   ],
-  "description": "<p><strong>KODEX &mdash; KSENSE</strong> (QSENSE). quantum-sensor diagnostic evaluation (NV/SQUID/SERF); a validated null gain where disruptions live (the MHD floor dominates the sensor floor)</p><p><strong>Benchmark:</strong> dAUC ~ -0.04..+0.003, d-warning ~0 ms vs conventional coil (validated null result)</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/ksense\">https://kronosfusionenergy.com/kodex/ksense</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
-  "description_plain": "KODEX \u2014 KSENSE (QSENSE). quantum-sensor diagnostic evaluation (NV/SQUID/SERF); a validated null gain where disruptions live (the MHD floor dominates the sensor floor)Benchmark: dAUC ~ -0.04..+0.003, d-warning ~0 ms vs conventional coil (validated null result)Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/ksense \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "description": "<p><strong>KODEX &mdash; KSENSE</strong> (QSENSE). REAL quantum-metrology evaluation (PennyLane mixed-state) \u2014 GHZ interferometry: ideal gives Heisenberg (gain ~ N) scaling, but realistic dephasing (NV/SQUID/SERF reality) collapses it back to the standard quantum limit (~sqrt(N)). Honest null where fusion disruptions live</p><p><strong>Benchmark:</strong> **REAL quantum metrology** (GHZ, PennyLane): ideal Heisenberg 4.0\u00d7 vs dephased 2.05\u00d7 \u2248 SQL 2.01\u00d7 \u2014 dephasing erases the advantage (honest null)</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/ksense\">https://kronosfusionenergy.com/kodex/ksense</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KSENSE (QSENSE). REAL quantum-metrology evaluation (PennyLane mixed-state) \u2014 GHZ interferometry: ideal gives Heisenberg (gain ~ N) scaling, but realistic dephasing (NV/SQUID/SERF reality) collapses it back to the standard quantum limit (~sqrt(N)). Honest null where fusion disruptions liveBenchmark: **REAL quantum metrology** (GHZ, PennyLane): ideal Heisenberg 4.0\u00d7 vs dephased 2.05\u00d7 \u2248 SQL 2.01\u00d7 \u2014 dephasing erases the advantage (honest null)Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/ksense \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
   "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
 }

@@ -1,0 +1,20 @@
+{
+  "member": "KHEAT",
+  "live_cd_surrogate": {
+    "source": "d1_cd_search.csv (3888-point current-drive design scan)",
+    "features": [
+      "gamma_cd",
+      "P_cd",
+      "ne",
+      "R0",
+      "B0",
+      "Ti0",
+      "beta_N"
+    ],
+    "target": "I_cd (driven current, MA)",
+    "r2_vs_scan": 0.949,
+    "n_samples": 3888,
+    "verdict": "Fast surrogate of the current-drive scan: predicts driven current from RF/NBI drive + plasma params, R2=0.949 (3888 configs). Reduced CD model \u2014 GENRAY/TORAY/NUBEAM ray-tracing is the fidelity upgrade."
+  },
+  "caveat": "engineering CD scan (not full ray-tracing); feeds KAIROS heating control"
+}

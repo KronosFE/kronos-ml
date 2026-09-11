@@ -7,8 +7,21 @@ generic, firewalled techno-economics calculator (no Kronos numbers, ever).
 """
 from __future__ import annotations
 
+import os
+from pathlib import Path
+
+import numpy as np
+
 from .. import register
 from ..base import Surrogate, Prediction
+
+# real on-disk engineering data (reduced fidelity; full sims are the upgrade path)
+_RESEARCH = Path(os.environ.get(
+    "KODEX_RESEARCH_ROOT",
+    "/Users/pford/Desktop/Kronos Fusion Energy/01 - RESEARCH & DATA/01 - Research, Data & Codes"))
+_CD_SCAN = _RESEARCH / "KRONOS_PAPERS_2026-07-31" / "breeder" / "d1_cd_search.csv"
+_DIV_THERMAL = _RESEARCH / "BREEDER - Phase 2" / "H9 - exhaust divertor engineering" / "h9_target_thermal.csv"
+_SEEDING = _RESEARCH / "BREEDER - Phase 2" / "H9 - exhaust divertor engineering" / "h9_seeding.csv"
 
 
 def _roadmap(cls_name, brand, func, phase, status, note, retired_by, gates=(), source=""):
@@ -27,23 +40,141 @@ def _roadmap(cls_name, brand, func, phase, status, note, retired_by, gates=(), s
     }))
 
 
-# ---- Phase 2 (partial data; ML surrogate next) ---------------------------
-# KBURN, KISO, KPATH are real surrogates now — see members/plant.py
-# KBREED, KFLUX are real surrogates now — see members/neutronics.py
-_roadmap("KHeat", "KHEAT", "heating&CD", 2, "PARTIAL",
-         "RF / NBI heating & current-drive actuator-response surrogate",
-         "RF/NBI physics codes", source="DEC-dispatch adjacency")
+# KBURN/KISO/KPATH -> members/plant.py; KBREED/KFLUX -> members/neutronics.py;
+# KFORGE/KPILOT -> members/capstone.py; KDRIVE/KLAW/KGEN/KFUEL/KSEEK/KBENCH -> members/advanced.py.
+# KHEAT/KEDGE/KRAD below are real reduced-fidelity surrogates on on-disk engineering scans
+# (full RF/NBI ray-tracing and SOLPS-ITER/EIRENE edge sims are the fidelity upgrades).
 
-# ---- Phase 3 (roadmap; no ML data yet) -----------------------------------
-# KFORGE, KPILOT are real capstones now — see members/capstone.py
-# KDRIVE, KLAW, KGEN, KFUEL are real surrogates now — see members/advanced.py
-# Only genuinely-gated codes remain ROADMAP: KEDGE + KRAD (need the SOLPS edge campaign)
-_roadmap("KEdge", "KEDGE", "edge-transport", 3, "ROADMAP",
-         "divertor / SOL / edge heat-flux transport surrogate",
-         "SOLPS-ITER / EIRENE", source="needs [C]->[A] SOLPS-ITER/EIRENE edge campaign")
-_roadmap("KRad", "KRAD", "radiation-control", 3, "ROADMAP",
-         "impurity seeding / radiation / divertor-detachment control",
-         "radiation transport + control", source="fold into KEDGE edge campaign")
+
+@register
+class KHEAT(Surrogate):
+    name = "KHEAT"; function = "heating&CD"; phase = 2; status = "BUILT"
+    provenance = "SIM"
+    retired_by = "full RF/NBI ray-tracing (GENRAY/TORAY/NUBEAM)"
+    real_codes = ("current-drive design scan",)
+    gates = ("H10",)
+    note = ("heating & current-drive actuator-response surrogate — fast RandomForest over a "
+            "3888-point current-drive design scan; predicts driven current I_cd from the RF/NBI "
+            "drive parameters + plasma state. Reduced CD model; ray-tracing = fidelity upgrade")
+    _FEATS = ["gamma_cd", "P_cd", "ne", "R0", "B0", "Ti0", "beta_N"]
+
+    def _fit(self):
+        if getattr(self, "_m", None) is not None:
+            return self._m
+        import pandas as pd
+        from sklearn.ensemble import RandomForestRegressor
+        from sklearn.metrics import r2_score
+        from .. import uq
+        d = pd.read_csv(_CD_SCAN)[self._FEATS + ["I_cd"]].dropna()
+        X = d[self._FEATS].to_numpy(float); y = d["I_cd"].to_numpy(float)
+        rng = np.random.default_rng(uq.SEED); p = rng.permutation(len(y)); X, y = X[p], y[p]
+        ntr = int(0.7 * len(y))
+        m = RandomForestRegressor(n_estimators=200, random_state=0).fit(X[:ntr], y[:ntr])
+        self._r2 = float(r2_score(y[ntr:], m.predict(X[ntr:]))); self._n = len(y)
+        self._m = m
+        return m
+
+    def _predict(self, x):
+        m = self._fit()
+        return Prediction(float(m.predict(np.atleast_2d(np.asarray(x, float)))[0]), None, True,
+                          note="driven current I_cd (MA) from [gamma_cd,P_cd,ne,R0,B0,Ti0,beta_N]")
+
+    def benchmark(self):
+        self._fit()
+        return {"member": self.name,
+                "live_cd_surrogate": {
+                    "source": "d1_cd_search.csv (3888-point current-drive design scan)",
+                    "features": self._FEATS, "target": "I_cd (driven current, MA)",
+                    "r2_vs_scan": round(self._r2, 3), "n_samples": self._n,
+                    "verdict": (f"Fast surrogate of the current-drive scan: predicts driven current from "
+                                f"RF/NBI drive + plasma params, R2={self._r2:.3f} ({self._n} configs). Reduced "
+                                f"CD model — GENRAY/TORAY/NUBEAM ray-tracing is the fidelity upgrade.")},
+                "caveat": "engineering CD scan (not full ray-tracing); feeds KAIROS heating control"}
+
+
+@register
+class KEDGE(Surrogate):
+    name = "KEDGE"; function = "edge-transport"; phase = 3; status = "BUILT"
+    provenance = "SIM"
+    retired_by = "SOLPS-ITER / EIRENE edge campaign"
+    real_codes = ("divertor target-thermal scan",)
+    gates = ("H9",)
+    note = ("divertor / edge heat-flux -> target-thermal surrogate — maps divertor heat flux to "
+            "target surface temperature + material limits (W / CuCrZr) from the H9 exhaust scan. "
+            "Reduced 0-D thermal model; SOLPS-ITER/EIRENE = fidelity upgrade")
+
+    def _fit(self):
+        if getattr(self, "_coef", None) is not None:
+            return
+        import pandas as pd
+        from sklearn.metrics import r2_score
+        df = pd.read_csv(_DIV_THERMAL).dropna(subset=["q_MWm2", "T_w_surf_C"])
+        q = df["q_MWm2"].to_numpy(float); T = df["T_w_surf_C"].to_numpy(float)
+        self._coef = np.polyfit(q, T, 2)
+        self._r2 = float(r2_score(T, np.polyval(self._coef, q))); self._n = len(q)
+        bad = df[df["ok_CuCrZr"] == False] if "ok_CuCrZr" in df else df.iloc[0:0]
+        self._q_limit = float(bad["q_MWm2"].min()) if len(bad) else float(q.max())
+
+    def _predict(self, x):
+        self._fit()
+        q = float(np.ravel(np.asarray(x, float))[0])
+        return Prediction(float(np.polyval(self._coef, q)), None, q <= self._q_limit,
+                          note=f"target surface temp (C) at q={q} MW/m^2; in_domain = under CuCrZr limit")
+
+    def benchmark(self):
+        self._fit()
+        return {"member": self.name,
+                "live_divertor_thermal": {
+                    "source": "h9_target_thermal.csv (H9 exhaust/divertor engineering scan)",
+                    "map": "divertor heat flux q [MW/m^2] -> target surface temperature [C]",
+                    "r2_fit": round(self._r2, 3), "n_samples": self._n,
+                    "max_safe_q_MWm2_CuCrZr": self._q_limit,
+                    "verdict": (f"Divertor target-thermal surrogate: q->T_surf fit R2={self._r2:.3f} over "
+                                f"{self._n} points; CuCrZr material limit at q~{self._q_limit} MW/m2. Reduced "
+                                f"0-D thermal model — SOLPS-ITER/EIRENE edge campaign is the fidelity upgrade.")},
+                "caveat": "0-D target-thermal scan, not a full 2-D edge-transport solve"}
+
+
+@register
+class KRAD(Surrogate):
+    name = "KRAD"; function = "radiation-control"; phase = 3; status = "BUILT"
+    provenance = "SIM"
+    retired_by = "impurity transport (SOLPS + impurity) + radiation control"
+    real_codes = ("impurity-seeding radiation scan",)
+    gates = ("H9",)
+    note = ("impurity-seeding radiation-control evaluator — maps a seeded impurity + radiated-power "
+            "fraction to core Zeff penalty and P_rad from the H9 seeding scan. Small scan; full "
+            "impurity-transport (SOLPS + impurity) = fidelity upgrade")
+
+    def _table(self):
+        import pandas as pd
+        return pd.read_csv(_SEEDING)
+
+    def _predict(self, x):
+        df = self._table()
+        imp = x.get("impurity", "N") if isinstance(x, dict) else "N"
+        row = df[df["impurity"] == imp]
+        r = (row.iloc[0] if len(row) else df.iloc[0])
+        return Prediction({"impurity": str(r["impurity"]), "P_rad_MW": float(r["P_rad_MW"]),
+                           "dZeff_core": [float(r["dZeff_core_lo"]), float(r["dZeff_core_hi"])],
+                           "c_div_frac_pct": float(r["c_div_frac_pct"])},
+                          None, True, note="radiated power + core-Zeff penalty for the seeded impurity")
+
+    def benchmark(self):
+        df = self._table()
+        best = df.loc[df["dZeff_core_hi"].idxmin()]
+        return {"member": self.name,
+                "live_impurity_seeding": {
+                    "source": "h9_seeding.csv (H9 impurity-seeding scan)",
+                    "n_impurities": int(df["impurity"].nunique()),
+                    "impurities": sorted(df["impurity"].unique().tolist()),
+                    "radiated_fraction": float(df["f_rad"].iloc[0]),
+                    "least_core_dilution_impurity": str(best["impurity"]),
+                    "verdict": (f"Impurity-seeding radiation evaluator over {int(df['impurity'].nunique())} "
+                                f"impurities at f_rad={df['f_rad'].iloc[0]}: '{best['impurity']}' gives the least "
+                                f"core Zeff penalty (dZeff_hi={best['dZeff_core_hi']}). Small scan — full "
+                                f"impurity-transport (SOLPS) is the fidelity upgrade.")},
+                "caveat": "small seeding scan (few impurities); reduced 0-D radiation model"}
 
 
 @register

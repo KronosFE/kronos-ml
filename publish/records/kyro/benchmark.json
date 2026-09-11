@@ -8,9 +8,9 @@
     "map": "12 turbulent / 4 quiet (16/16 complete)"
   },
   "speed": {
-    "surrogate_ms_per_point": 0.265,
+    "surrogate_ms_per_point": 0.329,
     "cgyro_gpu_h_per_point_measured": 2.89,
-    "speedup_x_vs_cgyro": "3.9e+07",
+    "speedup_x_vs_cgyro": "3.2e+07",
     "speedup_note": "ms inference vs GPU-hours for the CONVERGED flux value",
     "fidelity": "representative mu=400; real-mass gold deferred"
   },

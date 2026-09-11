@@ -1,0 +1,61 @@
+{
+  "member": "KTENSOR",
+  "live_low_rank_rom": {
+    "source": "real CGYRO A1e flux database (data.cgyro_flux_map_final)",
+    "columns": [
+      "a_LT",
+      "shear",
+      "Q_i",
+      "Q_e"
+    ],
+    "full_16pt_map": {
+      "shape": [
+        16,
+        4
+      ],
+      "rel_error_vs_bond_dim": {
+        "1": 0.5903,
+        "2": 0.3009,
+        "3": 0.1214,
+        "4": 0.0
+      },
+      "cumulative_variance": {
+        "1": 0.6515,
+        "2": 0.9094,
+        "3": 0.9853,
+        "4": 1.0
+      },
+      "effective_rank": 2.93
+    },
+    "turbulent_branch": {
+      "shape": [
+        12,
+        4
+      ],
+      "rel_error_vs_bond_dim": {
+        "1": 0.4964,
+        "2": 0.2879,
+        "3": 0.1304,
+        "4": 0.0
+      },
+      "cumulative_variance": {
+        "1": 0.7535,
+        "2": 0.9171,
+        "3": 0.983,
+        "4": 1.0
+      },
+      "effective_rank": 2.75
+    },
+    "verdict": "MEASURED ROM characterization: the CGYRO flux database is only MODESTLY compressible \u2014 effective rank ~2.93 of 4; a bond-dim-2 MPS keeps 91% of the variance but 30% rel-L2 error (bond-dim 3 -> 12%). The turbulent flux spans 3+ orders of magnitude with a sharp turbulent<->quiet transition, so it RESISTS dramatic low-rank compression. An honest counter to the naive 'flux is trivially low-rank' expectation. Classical SVD/MPS; NO quantum-advantage claim.",
+    "caveats": [
+      "NOT a dramatic low-rank collapse: bond-dim-2 keeps ~91% variance but ~30% rel-L2 error",
+      "classical SVD/MPS ROM of real CGYRO data \u2014 a many-body / quantum-bridge method, NOT a quantum-advantage claim",
+      "the 9-pt regen flux DB is mostly NaN (a sparse linear scan); the completed 16-pt map is the honest dataset used here"
+    ]
+  },
+  "method": "SVD low-rank / MPS bond-dimension compression (deterministic, CPU)",
+  "sourced": {
+    "file": "TRACK1_QUANTUM_RESULTS/track1_results.json (A5_MPS_flux)",
+    "note": "the Track-1 'rank-2 ~1%' figure was on the sparse 9x4 regen table; on the complete map the flux is not strongly low-rank (this card)"
+  }
+}

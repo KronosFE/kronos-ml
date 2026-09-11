@@ -1,11 +1,11 @@
 {
   "member": "KFORGE",
   "live_inverse_design": {
-    "a_LT": 2.194,
-    "shear": 1.584,
-    "A": 1.112,
-    "kappa": 1.83,
-    "delta": 0.127,
+    "a_LT": 2.228,
+    "shear": 1.511,
+    "A": 1.139,
+    "kappa": 1.548,
+    "delta": 0.003,
     "predicted_Q_tot": 0.0,
     "surrogates_chained": [
       "KYRO",

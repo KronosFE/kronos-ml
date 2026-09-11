@@ -1,0 +1,28 @@
+{
+  "member": "KSEEK",
+  "live_active_learning": {
+    "source": "KYRO GP over the completed 16-pt CGYRO A1e map",
+    "acquisition": "max GP posterior std (uncertainty sampling), min-separation filtered",
+    "next_runs": [
+      {
+        "a_LT": 2.225,
+        "shear": 0.58,
+        "gp_std": 0.5046
+      },
+      {
+        "a_LT": 3.275,
+        "shear": 0.58,
+        "gp_std": 0.5046
+      },
+      {
+        "a_LT": 3.275,
+        "shear": 1.42,
+        "gp_std": 0.5046
+      }
+    ],
+    "loo_std_vs_error_corr": -0.283,
+    "cgyro_gpu_h_per_point": 2.89,
+    "verdict": "Proposes the next CGYRO run at a/L_T=2.225, shear=0.58 (highest GP uncertainty). Leave-one-out: GP posterior-std vs actual error correlation = -0.283 \u2014 weak on this small map. A real experimental-design tool: spend ~2.9 GPU-h/point where it matters."
+  },
+  "caveat": "16 training points is small \u2014 acquisition is directional guidance, not a guarantee"
+}

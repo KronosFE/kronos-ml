@@ -2,8 +2,8 @@
   "kname": "KYRO",
   "page": "https://kronosfusionenergy.com/kodex/kyro",
   "title": "KODEX \u2014 KYRO: TRANSPORT",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
   "language": "eng",
   "upload_type": "software",
   "creators": [
@@ -59,7 +59,7 @@
       "resource_type": "dataset"
     }
   ],
-  "description": "<p><strong>KODEX &mdash; KYRO</strong> (TRANSPORT). CGYRO turbulence-transport surrogate over the complete 16/16 A1e map (total heat flux Q_tot + turbulent/quiet); mu=400 rep, real-mass gold deferred</p><p><strong>Benchmark:</strong> complete 16/16 map (12 turbulent / 4 quiet (16/16 complete)); turbulent/quiet **16/16 correct**, R\u00b2=0.858 / cov90=0.875; **0.265 ms vs 2.89 GPU-h/pt** (\u03bc=400)</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: <a href=\"https://kronosfusionenergy.com/kodex/kyro\">https://kronosfusionenergy.com/kodex/kyro</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
-  "description_plain": "KODEX \u2014 KYRO (TRANSPORT). CGYRO turbulence-transport surrogate over the complete 16/16 A1e map (total heat flux Q_tot + turbulent/quiet); mu=400 rep, real-mass gold deferredBenchmark: complete 16/16 map (12 turbulent / 4 quiet (16/16 complete)); turbulent/quiet **16/16 correct**, R\u00b2=0.858 / cov90=0.875; **0.265 ms vs 2.89 GPU-h/pt** (\u03bc=400)Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: https://kronosfusionenergy.com/kodex/kyro \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "description": "<p><strong>KODEX &mdash; KYRO</strong> (TRANSPORT). CGYRO turbulence-transport surrogate over the complete 16/16 A1e map (total heat flux Q_tot + turbulent/quiet); mu=400 rep, real-mass gold deferred</p><p><strong>Benchmark:</strong> complete 16/16 map (12 turbulent / 4 quiet (16/16 complete)); turbulent/quiet **16/16 correct**, R\u00b2=0.858 / cov90=0.875; **0.329 ms vs 2.89 GPU-h/pt** (\u03bc=400)</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: <a href=\"https://kronosfusionenergy.com/kodex/kyro\">https://kronosfusionenergy.com/kodex/kyro</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KYRO (TRANSPORT). CGYRO turbulence-transport surrogate over the complete 16/16 A1e map (total heat flux Q_tot + turbulent/quiet); mu=400 rep, real-mass gold deferredBenchmark: complete 16/16 map (12 turbulent / 4 quiet (16/16 complete)); turbulent/quiet **16/16 correct**, R\u00b2=0.858 / cov90=0.875; **0.329 ms vs 2.89 GPU-h/pt** (\u03bc=400)Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: https://kronosfusionenergy.com/kodex/kyro \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
   "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
 }

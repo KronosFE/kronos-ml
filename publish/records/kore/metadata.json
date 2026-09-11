@@ -2,8 +2,8 @@
   "kname": "KORE",
   "page": "https://kronosfusionenergy.com/kodex/kore",
   "title": "KODEX \u2014 KORE: EQUIL",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
   "language": "eng",
   "upload_type": "software",
   "creators": [
@@ -59,7 +59,7 @@
       "resource_type": "dataset"
     }
   ],
-  "description": "<p><strong>KODEX &mdash; KORE</strong> (EQUIL). fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulence</p><p><strong>Benchmark:</strong> learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.496 ms/field; sourced FNO 2.5% vs 1% bar</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kore\">https://kronosfusionenergy.com/kodex/kore</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
-  "description_plain": "KODEX \u2014 KORE (EQUIL). fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulenceBenchmark: learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.496 ms/field; sourced FNO 2.5% vs 1% barPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kore \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "description": "<p><strong>KODEX &mdash; KORE</strong> (EQUIL). fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulence</p><p><strong>Benchmark:</strong> learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.709 ms/field; sourced FNO 2.5% vs 1% bar</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kore\">https://kronosfusionenergy.com/kodex/kore</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KORE (EQUIL). fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulenceBenchmark: learned NN equilibrium: rel-L2 0.0035 vs analytic, 0.709 ms/field; sourced FNO 2.5% vs 1% barPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kore \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
   "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
 }

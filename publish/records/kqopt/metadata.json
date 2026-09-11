@@ -1,0 +1,65 @@
+{
+  "kname": "KQOPT",
+  "page": "https://kronosfusionenergy.com/kodex/kqopt",
+  "title": "KODEX \u2014 KQOPT: QOPT",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
+  "language": "eng",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Ford, P. I.",
+      "orcid": "0000-0003-0395-1752",
+      "affiliation": "Kronos Fusion Energy"
+    }
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "keywords": [
+    "fusion energy",
+    "spherical tokamak",
+    "D-3He",
+    "AI/ML surrogate model",
+    "uncertainty quantification",
+    "digital twin",
+    "Kronos Fusion Energy",
+    "QOPT",
+    "KODEX:KQOPT"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kqopt",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isPartOf",
+      "identifier": "https://kronosfusionenergy.com/kodex",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/KronosFE/kronos-ml",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.22645689",
+      "resource_type": "publication"
+    },
+    {
+      "relation": "isCompiledBy",
+      "identifier": "https://github.com/KronosFE/kronos-toolkit",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.21842371",
+      "resource_type": "dataset"
+    }
+  ],
+  "description": "<p><strong>KODEX &mdash; KQOPT</strong> (QOPT). REAL QAOA quantum optimizer \u2014 solves a combinatorial design QUBO on an actual quantum circuit (PennyLane); runs on a simulator now, real hardware pluggable, and you can plug in your own QUBO. Honest: standard ~0.7-1.0 approx ratio, no speedup at this size (~8-10 yr to advantage)</p><p><strong>Benchmark:</strong> **REAL QAOA optimizer**: 1.0 of optimum on a design QUBO (6 qubits); plug in your QUBO, run on real QC hardware \u2014 no speedup yet</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kqopt\">https://kronosfusionenergy.com/kodex/kqopt</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KQOPT (QOPT). REAL QAOA quantum optimizer \u2014 solves a combinatorial design QUBO on an actual quantum circuit (PennyLane); runs on a simulator now, real hardware pluggable, and you can plug in your own QUBO. Honest: standard ~0.7-1.0 approx ratio, no speedup at this size (~8-10 yr to advantage)Benchmark: **REAL QAOA optimizer**: 1.0 of optimum on a design QUBO (6 qubits); plug in your QUBO, run on real QC hardware \u2014 no speedup yetPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kqopt \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
+}

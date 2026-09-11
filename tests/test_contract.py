@@ -8,12 +8,14 @@ import kronos_ml as K
 from kronos_ml.base import Prediction
 
 
-def test_registry_has_thirty():
-    assert len(K.SURROGATES) == 30
+def test_registry():
+    # roster grows as new codes are built (v0.1.0 was 30); guard consistency, not an exact count
+    assert len(K.SURROGATES) >= 30
     phases = {1: 0, 2: 0, 3: 0}
     for c in K.fleet():
         phases[c["phase"]] += 1
-    assert phases == {1: 10, 2: 11, 3: 9}
+    assert sum(phases.values()) == len(K.SURROGATES)   # every code lands in a phase
+    assert all(v > 0 for v in phases.values())          # all three phases populated
 
 
 def test_every_code_has_provenance_and_status():
@@ -64,9 +66,12 @@ def test_kecon_financial_firewall():
 
 
 def test_roadmap_codes_raise():
-    for name in ("KEDGE", "KRAD"):     # the only genuinely-gated ROADMAP codes left
-        with pytest.raises(NotImplementedError):
-            K.run(name, None)
+    # any ROADMAP-status code must raise cleanly on run(); as of the v0.2.0 build every code
+    # is BUILT (0 roadmap), so this guards future placeholders without failing today.
+    for name in K.list_surrogates():
+        if K.get(name).status == "ROADMAP":
+            with pytest.raises(NotImplementedError):
+                K.run(name, None)
 
 
 def test_tagged_provenance_requires_retired_by():

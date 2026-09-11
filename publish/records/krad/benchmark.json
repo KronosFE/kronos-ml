@@ -1,0 +1,16 @@
+{
+  "member": "KRAD",
+  "live_impurity_seeding": {
+    "source": "h9_seeding.csv (H9 impurity-seeding scan)",
+    "n_impurities": 3,
+    "impurities": [
+      "Ar",
+      "N",
+      "Ne"
+    ],
+    "radiated_fraction": 0.58,
+    "least_core_dilution_impurity": "Ar",
+    "verdict": "Impurity-seeding radiation evaluator over 3 impurities at f_rad=0.58: 'Ar' gives the least core Zeff penalty (dZeff_hi=0.1102). Small scan \u2014 full impurity-transport (SOLPS) is the fidelity upgrade."
+  },
+  "caveat": "small seeding scan (few impurities); reduced 0-D radiation model"
+}
