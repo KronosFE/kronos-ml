@@ -56,7 +56,26 @@ KEYWORDS_BASE = ["fusion energy", "spherical tokamak", "D-3He", "AI/ML surrogate
 
 
 def built():
-    return sorted(n for n in K.list_surrogates() if K.get(n).status == "BUILT")
+    """The codes a publish run acts on: every BUILT code, unless KODEX_PUBLISH_ONLY
+    restricts it to an explicit allow-list (comma/space-separated code names).
+
+    The allow-list is how an operator deposits a deliberate SUBSET (e.g. only the
+    v0.2.0 additions) without touching the rest of the fleet — it does NOT change any
+    code's real status, so the package stays honest. Unset = all BUILT (default). A
+    named code that is not currently BUILT is a hard error, so a typo can never
+    silently narrow (or widen) the set.
+    """
+    names = sorted(n for n in K.list_surrogates() if K.get(n).status == "BUILT")
+    only = os.environ.get("KODEX_PUBLISH_ONLY", "").strip()
+    if only:
+        want = {c.strip().upper() for c in re.split(r"[,\s]+", only) if c.strip()}
+        unknown = want - set(names)
+        if unknown:
+            raise SystemExit(f"[STOP] KODEX_PUBLISH_ONLY names not in the BUILT set: "
+                             f"{sorted(unknown)} (BUILT: {names})")
+        names = [n for n in names if n in want]
+        sys.stderr.write(f"[scope] KODEX_PUBLISH_ONLY -> {len(names)} codes: {names}\n")
+    return names
 
 
 def physics_source(s):
@@ -127,7 +146,7 @@ def record_meta(name, b=None):
         "related_identifiers": related,
         "description": desc,
         "description_plain": desc_plain,
-        "notes": (f"Draft-first per-code deposit. Full package (all 26 codes): {REPO_URL}. "
+        "notes": (f"Draft-first per-code deposit. Full package: {REPO_URL}. "
                   f"Provenance chain in card.md + MANIFEST.sha256."),
     }
 
