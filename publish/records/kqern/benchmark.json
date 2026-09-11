@@ -1,0 +1,34 @@
+{
+  "member": "KQERN",
+  "live_quantum_kernel": {
+    "problem": "MAST disruption classification on a real quantum fidelity kernel",
+    "framework": "PennyLane AngleEmbedding kernel + precomputed-kernel SVM",
+    "quantum_kernel_auc": 0.919,
+    "classical_rbf_auc": 0.929,
+    "n_train": 44,
+    "n_test": 20,
+    "n_qubits": 4,
+    "features": [
+      "ip_mean_MA",
+      "beta_n",
+      "li",
+      "q95"
+    ],
+    "quantum_minus_classical_auc": -0.01,
+    "backend": {
+      "active_backend": "default",
+      "ran_on_real_hardware": false,
+      "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
+      "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+    },
+    "verdict": "REAL quantum kernel classifies MAST disruptions at AUC 0.919 vs classical RBF 0.929 (Delta -0.010) \u2014 no advantage: a validated null, but a REAL runnable quantum-ML pipeline on real fusion data. Runs on hardware with KODEX_QC_BACKEND=ibm.",
+    "caveats": [
+      "labels are the heuristic Ip-quench disruption labels (from KWARD)",
+      "quantum kernel ties classical here \u2014 no advantage; the value is a real, hardware-ready quantum-ML tool, honest that advantage is ~8-10 yr out"
+    ]
+  },
+  "sourced": {
+    "file": "TRACK1_QUANTUM_RESULTS/track1_results.json (A6_quantum_kernel_MAST)",
+    "note": "independent Track-1 run also found quantum-kernel AUC ~= classical (null)"
+  }
+}

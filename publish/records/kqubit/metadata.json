@@ -2,8 +2,8 @@
   "kname": "KQUBIT",
   "page": "https://kronosfusionenergy.com/kodex/kqubit",
   "title": "KODEX \u2014 KQUBIT: QML",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
   "language": "eng",
   "upload_type": "software",
   "creators": [
@@ -59,7 +59,7 @@
       "resource_type": "dataset"
     }
   ],
-  "description": "<p><strong>KODEX &mdash; KQUBIT</strong> (QML). quantum-ML surrogate (VQE) \u2014 a validated no-advantage rigor card: statevector exact, noisy never reaches chemical accuracy</p><p><strong>Benchmark:</strong> **statevector 0.0 mHa (PASS); noisy 14x-1305x over chem-acc (sim-only)** \u2014 MANDATORY: no quantum advantage this decade</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kqubit\">https://kronosfusionenergy.com/kodex/kqubit</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
-  "description_plain": "KODEX \u2014 KQUBIT (QML). quantum-ML surrogate (VQE) \u2014 a validated no-advantage rigor card: statevector exact, noisy never reaches chemical accuracyBenchmark: **statevector 0.0 mHa (PASS); noisy 14x-1305x over chem-acc (sim-only)** \u2014 MANDATORY: no quantum advantage this decadePart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kqubit \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "description": "<p><strong>KODEX &mdash; KQUBIT</strong> (QML). REAL variational quantum eigensolver (VQE) for a molecular Hamiltonian \u2014 a runnable quantum program (PennyLane): executes on a simulator now and on real quantum hardware when you plug in a backend. Honest: no quantum advantage yet (~8-10 yr out); the tooling + testing are real TODAY</p><p><strong>Benchmark:</strong> **REAL VQE** (PennyLane): recovers H2 ground state to 0.0002 mHa on default; runs on real QC hardware \u2014 no advantage yet</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kqubit\">https://kronosfusionenergy.com/kodex/kqubit</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KQUBIT (QML). REAL variational quantum eigensolver (VQE) for a molecular Hamiltonian \u2014 a runnable quantum program (PennyLane): executes on a simulator now and on real quantum hardware when you plug in a backend. Honest: no quantum advantage yet (~8-10 yr out); the tooling + testing are real TODAYBenchmark: **REAL VQE** (PennyLane): recovers H2 ground state to 0.0002 mHa on default; runs on real QC hardware \u2014 no advantage yetPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kqubit \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
   "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
 }

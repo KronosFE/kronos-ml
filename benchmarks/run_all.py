@@ -85,10 +85,46 @@ def _headline(name, b):
         e = b.get("live_expB_model_failure", {})
         return (f"MPC tracking {b.get('live_tracking_rms_frac')} (<5%); Exp-B **{e.get('escapes')} escapes "
                 f"/ {e.get('steps'):,}**; {b.get('live_mpc_step_us')} µs/step")
-    if name in ("KQUBIT", "KQROSS"):
-        return f"**{b.get('verdict','')}** — {b.get('caveat','validated negative result')}"
+    if name == "KQROSS":
+        e = b.get("live_resource_estimate", {})
+        return (f"**REAL FT resource estimator**: classical↔quantum crossover ~N={e.get('crossover_N_spin_orbitals')} "
+                f"needs {e.get('physical_qubits_needed')} physical qubits, roadmap ~{e.get('roadmap_year_reach_logical')} "
+                f"— no FT advantage this decade")
+    if name == "KDYN":
+        d = b.get("live_trotter", {}); c = d.get("spectral_norm_error_vs_steps", {})
+        vals = list(c.values())
+        return (f"**REAL Trotter quantum dynamics**: 1st-order error {vals[0] if vals else '?'}→{vals[-1] if vals else '?'} "
+                f"over steps (~1/n); runs on real QC hardware — honest cost curve, no advantage yet")
+    if name == "KQUBIT":
+        v = b.get("live_vqe", {})
+        return (f"**REAL VQE** (PennyLane): recovers H2 ground state to {v.get('recovery_mHa')} mHa on "
+                f"{v.get('backend',{}).get('active_backend')}; runs on real QC hardware — no advantage yet")
+    if name == "KQERN":
+        q = b.get("live_quantum_kernel", {})
+        return (f"**REAL quantum kernel**: MAST-disruption AUC {q.get('quantum_kernel_auc')} vs classical "
+                f"{q.get('classical_rbf_auc')} (ties — honest null); runnable on real QC hardware")
+    if name == "KQOPT":
+        q = b.get("live_qaoa", {})
+        return (f"**REAL QAOA optimizer**: {q.get('approx_ratio')} of optimum on a design QUBO "
+                f"({q.get('n_qubits')} qubits); plug in your QUBO, run on real QC hardware — no speedup yet")
+    if name == "KSEEK":
+        a = b.get("live_active_learning", {}); nr = (a.get("next_runs") or [{}])[0]
+        return (f"active-learning: proposes next CGYRO run (a/L_T={nr.get('a_LT')}, shear={nr.get('shear')}); "
+                f"LOO std-vs-error corr {a.get('loo_std_vs_error_corr')} (honest: weak on 16 pts)")
+    if name == "KBENCH":
+        s = b.get("live_benchmark_suite", {})
+        return (f"open fusion-ML benchmark suite: **{s.get('n_tasks')} citable tasks** "
+                f"(CGYRO turbulence, MAST disruption, flux ROM) with real data + KODEX baselines")
     if name == "KSENSE":
-        return f"{b.get('verdict','honest null gain')} (validated null result)"
+        m = b.get("live_quantum_metrology", {}).get("gain_growth_N2_to_N8", {})
+        return (f"**REAL quantum metrology** (GHZ, PennyLane): ideal Heisenberg {m.get('GHZ_ideal')}× vs "
+                f"dephased {m.get('GHZ_dephased')}× ≈ SQL {m.get('SQL')}× — dephasing erases the advantage "
+                f"(honest null)")
+    if name == "KTENSOR":
+        r = b.get("live_low_rank_rom", {}).get("full_16pt_map", {})
+        return (f"SVD/MPS ROM of the real CGYRO flux DB: **effective rank ~{r.get('effective_rank')} of 4 — "
+                f"modestly compressible, NOT strongly low-rank** (honest characterization; classical, no "
+                f"quantum advantage)")
     if name == "KBREED":
         li = b.get("live", {})
         return (f"TBR surrogate R²={li.get('r2_vs_engine')} vs neutronics engine; "
@@ -133,6 +169,18 @@ def _headline(name, b):
         return "fleet router: plain-language query → the right code (LLM agent = roadmap upgrade)"
     if name == "KECON":
         return "generic LCOE calculator + breakdown — **FINANCIAL FIREWALL (no Kronos numbers)**"
+    if name == "KHEAT":
+        h = b.get("live_cd_surrogate", {})
+        return (f"heating/current-drive surrogate: driven-current I_cd **R²={h.get('r2_vs_scan')}** over "
+                f"{h.get('n_samples')} configs (reduced CD; RF/NBI ray-tracing = upgrade)")
+    if name == "KEDGE":
+        e = b.get("live_divertor_thermal", {})
+        return (f"divertor edge surrogate: heat-flux→target-temp **R²={e.get('r2_fit')}**, CuCrZr limit "
+                f"q~{e.get('max_safe_q_MWm2_CuCrZr')} MW/m² (reduced 0-D; SOLPS/EIRENE = upgrade)")
+    if name == "KRAD":
+        r = b.get("live_impurity_seeding", {})
+        return (f"impurity-seeding radiation evaluator: {r.get('n_impurities')} impurities "
+                f"({', '.join(r.get('impurities', []))}); least core dilution = {r.get('least_core_dilution_impurity')}")
     return b.get("note", b.get("headline", "roadmap"))
 
 

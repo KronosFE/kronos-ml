@@ -1,0 +1,12 @@
+{
+  "member": "KEDGE",
+  "live_divertor_thermal": {
+    "source": "h9_target_thermal.csv (H9 exhaust/divertor engineering scan)",
+    "map": "divertor heat flux q [MW/m^2] -> target surface temperature [C]",
+    "r2_fit": 1.0,
+    "n_samples": 77,
+    "max_safe_q_MWm2_CuCrZr": 13.5,
+    "verdict": "Divertor target-thermal surrogate: q->T_surf fit R2=1.000 over 77 points; CuCrZr material limit at q~13.5 MW/m2. Reduced 0-D thermal model \u2014 SOLPS-ITER/EIRENE edge campaign is the fidelity upgrade."
+  },
+  "caveat": "0-D target-thermal scan, not a full 2-D edge-transport solve"
+}

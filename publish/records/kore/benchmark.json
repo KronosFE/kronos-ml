@@ -3,7 +3,7 @@
   "live_learned_surrogate": {
     "rel_l2_vs_analytic": 0.0035,
     "ensemble_cov90": 0.778,
-    "infer_ms": 0.496,
+    "infer_ms": 0.709,
     "grid": "16x16",
     "n_heldout": 120
   },

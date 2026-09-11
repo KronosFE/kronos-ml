@@ -7,7 +7,7 @@
 - **provenance:** SIM
 - **retired_by:** fault-tolerant quantum hardware (not available this decade)
 - **gates:** ['AC-43', 'BR-SX-08']
-- **note:** fault-tolerant quantum resource estimator + crossover analysis — a validated no-crossover result (when/if quantum beats classical)
+- **note:** REAL fault-tolerant resource estimator — computes the classical<->quantum crossover N, the surface-code physical-qubit overhead, and the logical-qubit roadmap year for a fusion electronic-structure kernel (order-of-magnitude, literature-scaled). Verdict: no FT advantage this decade — the machine does not exist yet
 - **available:** True
 
-Benchmark headline: **no crossover this decade; survives optimistic corner** — MANDATORY: no quantum advantage this decade
+Benchmark headline: **REAL FT resource estimator**: classical↔quantum crossover ~N=50 needs ~6e+04 physical qubits, roadmap ~2032 — no FT advantage this decade

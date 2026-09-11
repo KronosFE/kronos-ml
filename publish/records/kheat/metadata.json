@@ -1,0 +1,65 @@
+{
+  "kname": "KHEAT",
+  "page": "https://kronosfusionenergy.com/kodex/kheat",
+  "title": "KODEX \u2014 KHEAT: heating&CD",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
+  "language": "eng",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Ford, P. I.",
+      "orcid": "0000-0003-0395-1752",
+      "affiliation": "Kronos Fusion Energy"
+    }
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "keywords": [
+    "fusion energy",
+    "spherical tokamak",
+    "D-3He",
+    "AI/ML surrogate model",
+    "uncertainty quantification",
+    "digital twin",
+    "Kronos Fusion Energy",
+    "heating&CD",
+    "KODEX:KHEAT"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kheat",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isPartOf",
+      "identifier": "https://kronosfusionenergy.com/kodex",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/KronosFE/kronos-ml",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.22645689",
+      "resource_type": "publication"
+    },
+    {
+      "relation": "isCompiledBy",
+      "identifier": "https://github.com/KronosFE/kronos-toolkit",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.21842371",
+      "resource_type": "dataset"
+    }
+  ],
+  "description": "<p><strong>KODEX &mdash; KHEAT</strong> (heating&CD). heating & current-drive actuator-response surrogate \u2014 fast RandomForest over a 3888-point current-drive design scan; predicts driven current I_cd from the RF/NBI drive parameters + plasma state. Reduced CD model; ray-tracing = fidelity upgrade</p><p><strong>Benchmark:</strong> heating/current-drive surrogate: driven-current I_cd **R\u00b2=0.949** over 3888 configs (reduced CD; RF/NBI ray-tracing = upgrade)</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kheat\">https://kronosfusionenergy.com/kodex/kheat</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KHEAT (heating&CD). heating & current-drive actuator-response surrogate \u2014 fast RandomForest over a 3888-point current-drive design scan; predicts driven current I_cd from the RF/NBI drive parameters + plasma state. Reduced CD model; ray-tracing = fidelity upgradeBenchmark: heating/current-drive surrogate: driven-current I_cd **R\u00b2=0.949** over 3888 configs (reduced CD; RF/NBI ray-tracing = upgrade)Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kheat \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
+}

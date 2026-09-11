@@ -2,8 +2,8 @@
   "kname": "KAIROS",
   "page": "https://kronosfusionenergy.com/kodex/kairos",
   "title": "KODEX \u2014 KAIROS: CONTROL",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.2.0",
+  "publication_date": "2026-09-11",
   "language": "eng",
   "upload_type": "software",
   "creators": [
@@ -59,7 +59,7 @@
       "resource_type": "dataset"
     }
   ],
-  "description": "<p><strong>KODEX &mdash; KAIROS</strong> (CONTROL). real-time closed-loop MPC control (analytic finite-horizon QP); supplies the model-free L4 clamp that KGATE enforces</p><p><strong>Benchmark:</strong> MPC tracking 0.0461 (<5%); Exp-B **0 escapes / 150,000**; 89.7 \u00b5s/step</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kairos\">https://kronosfusionenergy.com/kodex/kairos</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description": "<p><strong>KODEX &mdash; KAIROS</strong> (CONTROL). real-time closed-loop MPC control (analytic finite-horizon QP); supplies the model-free L4 clamp that KGATE enforces</p><p><strong>Benchmark:</strong> MPC tracking 0.0461 (<5%); Exp-B **0 escapes / 150,000**; 96.1 \u00b5s/step</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kairos\">https://kronosfusionenergy.com/kodex/kairos</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
   "description_plain": "KODEX \u2014 KAIROS (CONTROL). real-time closed-loop MPC control (analytic finite-horizon QP); supplies the model-free L4 clamp that KGATE enforcesBenchmark: MPC tracking 0.0461 (Part of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kairos \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
   "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
 }
