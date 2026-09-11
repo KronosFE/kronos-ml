@@ -1,0 +1,17 @@
+{
+  "member": "KSENSE",
+  "verdict": "dAUC ~ -0.04..+0.003, d-warning ~0 ms vs conventional coil",
+  "result_type": "validated null result (BUILT)",
+  "live": {
+    "file": "track8b_quantum_sensing/sensing_to_disruption_gain.csv",
+    "n_rows": 8,
+    "columns": [
+      "scenario",
+      "sensor_class",
+      "noise_floor_T_rtHz",
+      "b_mode_scale_T",
+      "sigma_note",
+      "AUC"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "KODEX — KLAW: eqn-discovery (Kronos Family of Codes)"
+version: "0.1.0"
+date-released: "2026-09-10"
+license: Apache-2.0
+url: "https://kronosfusionenergy.com/kodex/klaw"
+repository-code: "https://github.com/KronosFE/kronos-ml"
+type: software
+authors:
+  - family-names: Ford
+    given-names: "P. I."
+    orcid: "https://orcid.org/0000-0003-0395-1752"
+    affiliation: "Kronos Fusion Energy"

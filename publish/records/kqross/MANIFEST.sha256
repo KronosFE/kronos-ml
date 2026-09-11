@@ -1,0 +1,7 @@
+# KODEX KQROSS SHA-256 (0.1.0, 2026-09-10)
+d401e897fde424e0ad455d71e464fdda3591b86affecf1e20c8c4451e35f51c6  CITATION.cff
+ae87ebecd1f321a19799e21f6fe25e4a74261f16c91e6cb6cc248e6197dcf838  LICENSE
+d819e52faa41b0ab05bf2d7add49734ece371c58bb5b1b30c8e9e18f532f046f  benchmark.json
+c4038173ec3e44d00cb44e71aeb7c718cd5075b9dcbd41389365b97f4e1d240a  card.md
+2e3bab560d69dbdce7373d14b8ec4d4f67cf0d0eda4aefbbbff5e63da7a438b5  kqross.py
+65cea048bdaf6ba8402ee61a24b46eab866ad3b7068c91cf4dafb6491e4094cb  metadata.json

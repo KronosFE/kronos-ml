@@ -1,0 +1,10 @@
+{
+  "member": "KBURN",
+  "live": {
+    "r2": 1.0,
+    "rmse_MW": 0.006,
+    "coverage_90": 1.0,
+    "n_test": 400
+  },
+  "sourced": "track5_control/dec_dispatch_summary.csv (dynamic reweight +22% vs static)"
+}

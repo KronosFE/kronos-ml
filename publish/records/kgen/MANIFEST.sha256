@@ -1,0 +1,7 @@
+# KODEX KGEN SHA-256 (0.1.0, 2026-09-10)
+ca85c6085b8ddcdd3961ca8f989bf68d0929e71622d0bcd30f3eac43abd384e9  CITATION.cff
+ae87ebecd1f321a19799e21f6fe25e4a74261f16c91e6cb6cc248e6197dcf838  LICENSE
+7c1ccbce36e999c79fefbcab7f23b01111b82f13716adc13012bec5eec27d25e  benchmark.json
+b59d95751ebf02a402c7f3e7505b0eba951df71dbd747be27f2916a043aa4f52  card.md
+239c726fb7d8e9f344dfd7dc4eb7e7ad59f6e3abff6307e7a2f210b7b52dde31  kgen.py
+8f38913bd8c24ca7dd735cdd9154bd4e4e273ab8b76a9cecf290348c6cb1081e  metadata.json

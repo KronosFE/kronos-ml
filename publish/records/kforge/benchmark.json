@@ -1,0 +1,17 @@
+{
+  "member": "KFORGE",
+  "live_inverse_design": {
+    "a_LT": 2.194,
+    "shear": 1.584,
+    "A": 1.112,
+    "kappa": 1.83,
+    "delta": 0.127,
+    "predicted_Q_tot": 0.0,
+    "surrogates_chained": [
+      "KYRO",
+      "KORE"
+    ],
+    "objective": "min transport (feasible)"
+  },
+  "note": "differential evolution chained KYRO+KORE to find a low-transport, feasible design \u2014 the capstone that requires the fleet"
+}

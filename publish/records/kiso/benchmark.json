@@ -1,0 +1,25 @@
+{
+  "member": "KISO",
+  "live_servo": {
+    "r2_mean_over_4_species": 0.723,
+    "n_test": 200
+  },
+  "sourced": "track5_control/isotope_control_summary.csv (closed-loop 13.6x vs open)",
+  "live_medical_yield": {
+    "n_isotopes": 6,
+    "flagship_Mo-99": {
+      "sigma_thermal_b": 0.1321,
+      "sigma_14MeV_b": 0.00054
+    },
+    "ranked_by_thermal_yield": [
+      "Lu-177",
+      "Sm-153",
+      "Re-186",
+      "Co-60",
+      "Mo-99",
+      "Cu-67"
+    ],
+    "source": "FENDL-3.2 (n,x) cross-sections, 2-group fusion spectrum",
+    "note": "full-spectrum convolution + separation chemistry = the fidelity upgrade"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "date": "2026-09-10",
+  "built": [
+    "KAIROS",
+    "KBREED",
+    "KBURN",
+    "KDRIVE",
+    "KECON",
+    "KEYE",
+    "KFLOW",
+    "KFLUX",
+    "KFORGE",
+    "KFUEL",
+    "KFUSE",
+    "KGATE",
+    "KGEN",
+    "KHALO",
+    "KISO",
+    "KLAW",
+    "KMAT",
+    "KOIL",
+    "KORE",
+    "KPATH",
+    "KPILOT",
+    "KQROSS",
+    "KQUBIT",
+    "KSENSE",
+    "KWARD",
+    "KYRO"
+  ],
+  "n_built": 26,
+  "held": [
+    "KEDGE",
+    "KHEAT",
+    "KRAD",
+    "KTENSOR"
+  ],
+  "n_files_hashed": 39
+}

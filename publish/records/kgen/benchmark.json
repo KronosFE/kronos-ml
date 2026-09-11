@@ -1,0 +1,9 @@
+{
+  "member": "KGEN",
+  "live": {
+    "latent_dim": 8,
+    "reconstruction_rel_l2": 4.15e-16,
+    "variance_explained": 1.0,
+    "note": "reconstruction is near-exact BECAUSE the analytic field family is low-rank (3 shape params); the diffusion upgrade earns its keep on a richer real-equilibria corpus. KGEN's job is sampling new plausible fields."
+  }
+}

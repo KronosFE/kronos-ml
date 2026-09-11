@@ -1,0 +1,20 @@
+{
+  "member": "KMAT",
+  "n_candidates_screened": 8,
+  "top": {
+    "name": "BLK_Al50Ti33Zr10Cr7",
+    "note": "blanket structural IP#12 (A34)",
+    "comp": {
+      "Al": 8,
+      "Ti": 5,
+      "Zr": 2,
+      "Cr": 1
+    },
+    "a0_vegard": 3.2653,
+    "E_per_atom": -6.3282,
+    "Eform_proxy": -0.393,
+    "V_per_atom": 16.977
+  },
+  "sourced": "chgnet_screen_results.json (DFT-validated)",
+  "note": "alloy screen BUILT; dpa/lifetime roadmap inside KMAT"
+}

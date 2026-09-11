@@ -1,0 +1,9 @@
+{
+  "member": "KBREED",
+  "live": {
+    "r2_vs_engine": 1.0,
+    "coverage_90": 1.0,
+    "nominal_net_tbr": 0.742
+  },
+  "note": "surrogate over toolkit neutronics (analytic); OpenMC upgrade = compute route [A]"
+}

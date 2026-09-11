@@ -1,0 +1,18 @@
+{
+  "member": "KYRO",
+  "accuracy": {
+    "r2_log_Qtot": 0.858,
+    "rmse_log_Qtot": 0.857,
+    "coverage_90": 0.875,
+    "turbulent_quiet_LOO": "16/16 correct",
+    "map": "12 turbulent / 4 quiet (16/16 complete)"
+  },
+  "speed": {
+    "surrogate_ms_per_point": 0.265,
+    "cgyro_gpu_h_per_point_measured": 2.89,
+    "speedup_x_vs_cgyro": "3.9e+07",
+    "speedup_note": "ms inference vs GPU-hours for the CONVERGED flux value",
+    "fidelity": "representative mu=400; real-mass gold deferred"
+  },
+  "provenance": "COMPLETE 16/16 CGYRO A1e map (mu=400); operating point subcritical"
+}

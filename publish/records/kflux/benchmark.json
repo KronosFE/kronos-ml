@@ -1,0 +1,8 @@
+{
+  "member": "KFLUX",
+  "live": {
+    "r2_log_fluence_vs_engine": 1.0,
+    "n_test": 60
+  },
+  "note": "surrogate over toolkit shielding/fluence (analytic); OpenMC upgrade = compute route [A]"
+}

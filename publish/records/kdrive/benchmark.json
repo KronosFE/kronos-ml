@@ -1,0 +1,16 @@
+{
+  "member": "KDRIVE",
+  "live": {
+    "learned_policy_tracking_rms": 0.0551,
+    "naive_gain_tracking_rms": 0.1225,
+    "learned_gains": [
+      0.935,
+      1.271,
+      0.998,
+      0.617,
+      1.072,
+      0.595
+    ],
+    "note": "cross-entropy-method policy search, twin-in-the-loop"
+  }
+}

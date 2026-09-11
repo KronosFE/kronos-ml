@@ -1,0 +1,14 @@
+{
+  "member": "KHALO",
+  "sourced": {
+    "file": "track6_surrogate_uq/uq_calibration_summary.csv",
+    "ece": "0.0327 +/- 0.0136",
+    "coverage_90": "0.888 +/- 0.034",
+    "result": "PASS (mean)"
+  },
+  "live_gp_on_cgyro": {
+    "ece": 0.0771,
+    "coverage_90": 0.8,
+    "n": 10
+  }
+}
