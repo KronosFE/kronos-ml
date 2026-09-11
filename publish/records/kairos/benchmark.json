@@ -1,0 +1,19 @@
+{
+  "member": "KAIROS",
+  "live_tracking_rms_frac": 0.0461,
+  "live_expB_model_failure": {
+    "adversaries": [
+      "drift",
+      "edge_seeker",
+      "nan_garbage"
+    ],
+    "steps": 150000,
+    "escapes": 0,
+    "catch_rate": 1.0
+  },
+  "live_mpc_step_us": 89.7,
+  "sourced": {
+    "file": "track5_control/clamp_activation_stats.csv",
+    "headline": "0 escapes / 150k steps / 3000 injected (AC-25); tracking <5%"
+  }
+}

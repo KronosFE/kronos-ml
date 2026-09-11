@@ -1,0 +1,9 @@
+{
+  "member": "KPATH",
+  "live": {
+    "r2_mean_over_6_axes": 0.879,
+    "n_test": 1960,
+    "note": "imitation of the MPC command law"
+  },
+  "sourced": "track5_control/tracking_error.csv (MPC RMS <5% on all 6)"
+}

@@ -1,0 +1,44 @@
+{
+  "member": "KWARD",
+  "live_real_device": {
+    "source": "592 real MAST shots (FAIR-MAST), fixed 50 ms window",
+    "auc": 0.98,
+    "auc_precursor_only_no_Ip_variability": 0.984,
+    "ece": 0.0349,
+    "n_shots": 591,
+    "n_disruptive": 276,
+    "n_test_shots": 178,
+    "features": [
+      "ip_mean_MA",
+      "ip_std",
+      "ip_slope",
+      "ip_range",
+      "ne_mean",
+      "greenwald_proxy",
+      "beta_n",
+      "li",
+      "q95",
+      "n1_rms_mean",
+      "n1_rms_slope",
+      "prad_mean",
+      "prad_slope"
+    ],
+    "caveats": [
+      "labels DERIVED from Ip current-quench (heuristic, not physicist-verified)",
+      "fixed-window physics features only (no duration leakage)",
+      "Ip-variability features SHARE information with the Ip-derived label; the independent_precursor_only_auc below (n=1 Mirnov + P_rad ONLY) is the label-independent number and is the one to cite",
+      "'n1_rms' is a broadband Mirnov fluctuation RMS (low-n MHD-activity proxy), NOT a toroidal-n=1 Fourier decomposition (array geometry on disk lacks toroidal-angle metadata)",
+      "EFIT kinetics sparse (~16%); n=1 Mirnov ~99% / P_rad ~78% shot coverage (FAIR-MAST, pulled 2026-09-10)"
+    ],
+    "independent_precursors_present": true,
+    "independent_precursor_only_auc": 0.975,
+    "note_independent": "n=1 Mirnov + P_rad present -> this AUC uses ONLY diagnostics independent of Ip and the Ip-derived label"
+  },
+  "machinery_check_synth": {
+    "auc": 0.916
+  },
+  "sourced_twin": {
+    "file": "track4_disruption/disruption_metrics.csv",
+    "note": "prior twin-synthetic result AUC 0.990 (superseded by real-device above)"
+  }
+}

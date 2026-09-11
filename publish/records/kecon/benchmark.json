@@ -1,0 +1,11 @@
+{
+  "member": "KECON",
+  "live_worked_example": {
+    "lcoe_per_MWh": 167.64,
+    "capital_component_per_MWh": 134.31,
+    "opex_component_per_MWh": 33.33,
+    "capital_recovery_factor": 0.0806
+  },
+  "firewall": "generic community calculator; NO Kronos cost/price/valuation/funding, ever",
+  "note": "founder-approved public, generic-only; inputs above are illustrative placeholders"
+}

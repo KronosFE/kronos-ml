@@ -1,0 +1,65 @@
+{
+  "kname": "KLAW",
+  "page": "https://kronosfusionenergy.com/kodex/klaw",
+  "title": "KODEX \u2014 KLAW: eqn-discovery",
+  "version": "0.1.0",
+  "publication_date": "2026-09-10",
+  "language": "eng",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Ford, P. I.",
+      "orcid": "0000-0003-0395-1752",
+      "affiliation": "Kronos Fusion Energy"
+    }
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "keywords": [
+    "fusion energy",
+    "spherical tokamak",
+    "D-3He",
+    "AI/ML surrogate model",
+    "uncertainty quantification",
+    "digital twin",
+    "Kronos Fusion Energy",
+    "eqn-discovery",
+    "KODEX:KLAW"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/klaw",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isPartOf",
+      "identifier": "https://kronosfusionenergy.com/kodex",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/KronosFE/kronos-ml",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.22645689",
+      "resource_type": "publication"
+    },
+    {
+      "relation": "isCompiledBy",
+      "identifier": "https://github.com/KronosFE/kronos-toolkit",
+      "resource_type": "software"
+    },
+    {
+      "relation": "isDerivedFrom",
+      "identifier": "10.5281/zenodo.22136279",
+      "resource_type": "dataset"
+    }
+  ],
+  "description": "<p><strong>KODEX &mdash; KLAW</strong> (eqn-discovery). equation discovery \u2014 sparse regression finds a compact closure for log10(Q_tot) over the CGYRO map (mu=400)</p><p><strong>Benchmark:</strong> equation discovery: 7 terms, R\u00b2=0.903 \u2014 **rediscovered the critical-gradient onset** from the CGYRO map</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: <a href=\"https://kronosfusionenergy.com/kodex/klaw\">https://kronosfusionenergy.com/kodex/klaw</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KLAW (eqn-discovery). equation discovery \u2014 sparse regression finds a compact closure for log10(Q_tot) over the CGYRO map (mu=400)Benchmark: equation discovery: 7 terms, R\u00b2=0.903 \u2014 **rediscovered the critical-gradient onset** from the CGYRO mapPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: isDerivedFrom 10.5281/zenodo.22136279. Home: https://kronosfusionenergy.com/kodex/klaw \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "notes": "Draft-first per-code deposit. Full package (all 26 codes): https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
+}

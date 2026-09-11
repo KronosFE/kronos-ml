@@ -1,0 +1,7 @@
+{
+  "member": "KGATE",
+  "steps": 150000,
+  "escapes": 0,
+  "catch_rate": 1.0,
+  "note": "model-free clamp; safety independent of any model"
+}

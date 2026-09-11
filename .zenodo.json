@@ -1,0 +1,197 @@
+{
+  "title": "KODEX: the Kronos Family of Codes (AI/ML fusion surrogate suite) v0.1.0",
+  "upload_type": "software",
+  "language": "eng",
+  "version": "0.1.0",
+  "publication_date": "2026-09-10",
+  "creators": [
+    {
+      "name": "Ford, P. I.",
+      "orcid": "0000-0003-0395-1752",
+      "affiliation": "Kronos Fusion Energy"
+    }
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "keywords": [
+    "fusion energy",
+    "spherical tokamak",
+    "D-3He",
+    "gyrokinetic turbulence",
+    "negative triangularity",
+    "AI/ML surrogate model",
+    "uncertainty quantification",
+    "conformal calibration",
+    "disruption prediction",
+    "digital twin",
+    "control barrier function",
+    "neutronics",
+    "medical isotopes",
+    "Kronos Fusion Energy"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDerivedFrom",
+      "identifier": "10.5281/zenodo.22136279",
+      "resource_type": "dataset"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.22645689",
+      "resource_type": "publication"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.21842371",
+      "resource_type": "dataset"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/KronosFE/kronos-toolkit",
+      "resource_type": "software"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/KronosFE/kronos-ml",
+      "resource_type": "software"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kairos",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kbreed",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kburn",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kdrive",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kecon",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/keye",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kflow",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kflux",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kforge",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kfuel",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kfuse",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kgate",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kgen",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/khalo",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kiso",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/klaw",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kmat",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/koil",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kore",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kpath",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kpilot",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kqross",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kqubit",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/ksense",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kward",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kyro",
+      "resource_type": "publication-other"
+    }
+  ],
+  "notes": "Draft-first deposit. Provenance chain: code -> benchmark -> on-disk data -> CGYRO/register/AI+Quantum DOI. See PROVENANCE.md and MANIFEST.sha256.",
+  "description": "<p><strong>KODEX &mdash; the Kronos Family of Codes.</strong> A benchmarked suite of AI/ML surrogate models that stand in for expensive fusion physics (CGYRO-class gyrokinetics, neutronics, equilibrium, control) with calibrated uncertainty and an abstention gate. One contract across the fleet: <code>predict(x) &rarr; (y, uncertainty, in_domain)</code>. Built on and tracing to the Kronos research corpus.</p><p>This release publishes the <strong>26 BUILT</strong> codes (package + real benchmark + docs). 4 further codes ship as honest ROADMAP: KEDGE, KHEAT, KRAD, KTENSOR.</p><p>Honest cards are kept intact: CGYRO-anchored surrogates use the mu=400 representative-mass turbulence map; the quantum members (KQUBIT/KQROSS/KSENSE) report validated null/negative results (no quantum advantage claimed); KWARD's disruption labels are heuristic (Ip current-quench, not physicist-verified) and its headline independent-precursor AUC (0.975) uses only n=1 Mirnov + P_rad; KECON is a generic-LCOE financial firewall carrying no Kronos economic numbers.</p><p>Documentation: <a href=\"https://kronosfusionenergy.com/kodex\">https://kronosfusionenergy.com/kodex</a> &middot; source: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>.</p>"
+}

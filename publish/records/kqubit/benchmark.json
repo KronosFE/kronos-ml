@@ -1,0 +1,7 @@
+{
+  "member": "KQUBIT",
+  "sourced": "track8_vqe_poc/vqe_convergence.csv + vqe_scale_wall.csv",
+  "verdict": "statevector 0.0 mHa (PASS); noisy 14x-1305x over chem-acc (sim-only)",
+  "result_type": "validated negative result (BUILT \u2014 a complete finding)",
+  "caveat": "MANDATORY: no quantum advantage this decade"
+}

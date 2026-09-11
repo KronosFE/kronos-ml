@@ -1,0 +1,859 @@
+{
+  "KAIROS": {
+    "card": {
+      "name": "KAIROS",
+      "function": "CONTROL",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "TWIN",
+      "retired_by": "validated real-time plant controller (device-in-the-loop)",
+      "gates": [
+        "AC-24",
+        "AC-25"
+      ],
+      "note": "real-time closed-loop MPC control (analytic finite-horizon QP); supplies the model-free L4 clamp that KGATE enforces",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KAIROS",
+      "live_tracking_rms_frac": 0.0461,
+      "live_expB_model_failure": {
+        "adversaries": [
+          "drift",
+          "edge_seeker",
+          "nan_garbage"
+        ],
+        "steps": 150000,
+        "escapes": 0,
+        "catch_rate": 1.0
+      },
+      "live_mpc_step_us": 76.8,
+      "sourced": {
+        "file": "track5_control/clamp_activation_stats.csv",
+        "headline": "0 escapes / 150k steps / 3000 injected (AC-25); tracking <5%"
+      }
+    }
+  },
+  "KBREED": {
+    "card": {
+      "name": "KBREED",
+      "function": "breeder",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "OpenMC (Monte-Carlo neutron transport)",
+      "gates": [
+        "BR-neut"
+      ],
+      "note": "tritium breeding-ratio surrogate (Hyperion blanket) \u2014 fast GP over the toolkit neutronics; OpenMC is the auto-dispatch high-fidelity upgrade",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KBREED",
+      "live": {
+        "r2_vs_engine": 1.0,
+        "coverage_90": 1.0,
+        "nominal_net_tbr": 0.742
+      },
+      "note": "surrogate over toolkit neutronics (analytic); OpenMC upgrade = compute route [A]"
+    }
+  },
+  "KBURN": {
+    "card": {
+      "name": "KBURN",
+      "function": "burner",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "TWIN",
+      "retired_by": "full plant systems model",
+      "gates": [],
+      "note": "burner dispatch surrogate \u2014 fuel mix -> captured power (Aegis/MetroVolt); GP over the DEC dispatch traces",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KBURN",
+      "live": {
+        "r2": 1.0,
+        "rmse_MW": 0.006,
+        "coverage_90": 1.0,
+        "n_test": 400
+      },
+      "sourced": "track5_control/dec_dispatch_summary.csv (dynamic reweight +22% vs static)"
+    }
+  },
+  "KDRIVE": {
+    "card": {
+      "name": "KDRIVE",
+      "function": "RL-control",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "TWIN",
+      "retired_by": "device-validated learned controller",
+      "gates": [],
+      "note": "reinforcement-learning controller \u2014 a feedback policy learned by the cross-entropy method in the twin plant loop; clamped by KGATE",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KDRIVE",
+      "live": {
+        "learned_policy_tracking_rms": 0.0551,
+        "naive_gain_tracking_rms": 0.1225,
+        "learned_gains": [
+          0.935,
+          1.271,
+          0.998,
+          0.617,
+          1.072,
+          0.595
+        ],
+        "note": "cross-entropy-method policy search, twin-in-the-loop"
+      }
+    }
+  },
+  "KECON": {
+    "card": {
+      "name": "KECON",
+      "function": "techno-economics",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "n/a",
+      "retired_by": "detailed engineering cost model (never public)",
+      "gates": [],
+      "note": "GENERIC open techno-economics (LCOE) on the USER's inputs \u2014 FINANCIAL FIREWALL: no Kronos numbers, ever",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KECON",
+      "live_worked_example": {
+        "lcoe_per_MWh": 167.64,
+        "capital_component_per_MWh": 134.31,
+        "opex_component_per_MWh": 33.33,
+        "capital_recovery_factor": 0.0806
+      },
+      "firewall": "generic community calculator; NO Kronos cost/price/valuation/funding, ever",
+      "note": "founder-approved public, generic-only; inputs above are illustrative placeholders"
+    }
+  },
+  "KEDGE": {
+    "card": {
+      "name": "KEDGE",
+      "function": "edge-transport",
+      "status": "ROADMAP",
+      "phase": 3,
+      "provenance": "n/a",
+      "retired_by": "SOLPS-ITER / EIRENE",
+      "gates": [],
+      "note": "divertor / SOL / edge heat-flux transport surrogate",
+      "available": false
+    },
+    "benchmark": {
+      "member": "KEDGE",
+      "status": "ROADMAP",
+      "sourced": "needs [C]->[A] SOLPS-ITER/EIRENE edge campaign",
+      "note": "divertor / SOL / edge heat-flux transport surrogate"
+    }
+  },
+  "KEYE": {
+    "card": {
+      "name": "KEYE",
+      "function": "DIAG",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "physical diagnostic suite + validated sensor fusion",
+      "gates": [
+        "AC-36"
+      ],
+      "note": "diagnostics / virtual-sensor / signal-validation observer \u2014 builds on KFLOW's graph imputation + quantum-sensing; flags faulty channels",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KEYE",
+      "live_fault_detection": {
+        "detection_rate": 0.767,
+        "false_alarm_rate": 0.0,
+        "n_trials": 300,
+        "method": "3-sigma same-class residual"
+      },
+      "sourced": {
+        "file": "track8b_quantum_sensing/sensing_to_disruption_gain.csv",
+        "finding": "quantum sensing buys ~0 gain where disruptions live (model-limited)"
+      }
+    }
+  },
+  "KFLOW": {
+    "card": {
+      "name": "KFLOW",
+      "function": "STATE",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "SIM",
+      "retired_by": "trained message-passing GNN (gnn_seed0..4.pt)",
+      "gates": [
+        "AC-18",
+        "AC-19"
+      ],
+      "note": "twin state-estimation / dropped-sensor imputation on the 76-node diagnostic sensor graph",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KFLOW",
+      "sourced_gnn": {
+        "file": "track3_gnn/gnn_imputation.csv",
+        "k_failed": 8,
+        "gnn_rmse": 0.0844,
+        "naive_rmse": 0.1721,
+        "gnn_beats_naive": true,
+        "AC18_bar_0.05": "MISSED (kept honest)"
+      },
+      "live_classmean_baseline_rmse_k8": 1.0215,
+      "live_note": "crude same-class-mean baseline (worse than the track's inverse-distance naive 0.172 and the trained GNN 0.084); shipped predict() uses the same-class imputation"
+    }
+  },
+  "KFLUX": {
+    "card": {
+      "name": "KFLUX",
+      "function": "neutronics",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "OpenMC (Monte-Carlo neutron transport)",
+      "gates": [],
+      "note": "neutron shielding / coil-fluence surrogate \u2014 fast GP over the toolkit neutronics; OpenMC is the auto-dispatch high-fidelity upgrade",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KFLUX",
+      "live": {
+        "r2_log_fluence_vs_engine": 1.0,
+        "n_test": 60
+      },
+      "note": "surrogate over toolkit shielding/fluence (analytic); OpenMC upgrade = compute route [A]"
+    }
+  },
+  "KFORGE": {
+    "card": {
+      "name": "KFORGE",
+      "function": "inverse-design",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "CGYRO-urep",
+      "retired_by": "full integrated design optimization",
+      "gates": [],
+      "note": "inverse-design capstone \u2014 chains the fleet surrogates (KYRO transport + KORE equilibrium feasibility) to search machine designs",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KFORGE",
+      "live_inverse_design": {
+        "a_LT": 2.186,
+        "shear": 1.406,
+        "A": 1.077,
+        "kappa": 2.39,
+        "delta": 0.278,
+        "predicted_Q_tot": 0.0,
+        "surrogates_chained": [
+          "KYRO",
+          "KORE"
+        ],
+        "objective": "min transport (feasible)"
+      },
+      "note": "differential evolution chained KYRO+KORE to find a low-transport, feasible design \u2014 the capstone that requires the fleet"
+    }
+  },
+  "KFUEL": {
+    "card": {
+      "name": "KFUEL",
+      "function": "fuel-cycle",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "SIM",
+      "retired_by": "full fuel-cycle systems code (e.g. MIRC / TRANSAT)",
+      "gates": [],
+      "note": "tritium fuel-cycle inventory \u2014 a reduced systems model (breeding, burn, decay, reserve) giving self-sufficiency + doubling time",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KFUEL",
+      "live_nominal": {
+        "net_breeding_kg_yr": 1.936,
+        "self_sufficient": true,
+        "doubling_time_yr": 5.17
+      },
+      "note": "reduced systems model seeded from tritium physics (12.32 yr half-life); full fuel-cycle code is the roadmap upgrade"
+    }
+  },
+  "KFUSE": {
+    "card": {
+      "name": "KFUSE",
+      "function": "MULTIFID",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "CGYRO-urep",
+      "retired_by": "CGYRO real-mass converged (mu=3672)",
+      "gates": [
+        "BR-L2-A1e",
+        "BR-L2-A1c-MS"
+      ],
+      "note": "multi-fidelity surrogate: cheap analytic low-fidelity + a residual GP correction from the mu=400 CGYRO points; real-mass gold is the 3rd fidelity",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KFUSE",
+      "live_multifidelity": {
+        "rmse_low_fidelity_only": 1.481,
+        "rmse_multifidelity": 1.05,
+        "r2_multifidelity": 0.787,
+        "note": "residual GP correction from 16 mu=400 CGYRO points reduces LF error"
+      },
+      "fidelities": "low = analytic proxy; high = mu=400 CGYRO; 3rd = real-mass gold (deferred)"
+    }
+  },
+  "KGATE": {
+    "card": {
+      "name": "KGATE",
+      "function": "SAFE",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "TWIN",
+      "retired_by": "formal CBF verification + hardware failsafe",
+      "gates": [],
+      "note": "trust-boundary / abstention gate \u2014 a model-free envelope clamp that decides in_domain and fail-closes on bad input",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KGATE",
+      "steps": 150000,
+      "escapes": 0,
+      "catch_rate": 1.0,
+      "note": "model-free clamp; safety independent of any model"
+    }
+  },
+  "KGEN": {
+    "card": {
+      "name": "KGEN",
+      "function": "generative",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "ANALYTIC",
+      "retired_by": "high-fidelity generative model (diffusion) on real fields",
+      "gates": [],
+      "note": "generative surrogate \u2014 a PCA/latent model that samples plausible equilibrium flux fields; diffusion is the roadmap upgrade",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KGEN",
+      "live": {
+        "latent_dim": 8,
+        "reconstruction_rel_l2": 4.15e-16,
+        "variance_explained": 1.0,
+        "note": "reconstruction is near-exact BECAUSE the analytic field family is low-rank (3 shape params); the diffusion upgrade earns its keep on a richer real-equilibria corpus. KGEN's job is sampling new plausible fields."
+      }
+    }
+  },
+  "KHALO": {
+    "card": {
+      "name": "KHALO",
+      "function": "UQ",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "SIM",
+      "retired_by": "full ensemble UQ / conformal prediction",
+      "gates": [
+        "KX-L1-A14",
+        "KX-L1-A5"
+      ],
+      "note": "shared calibrated-uncertainty layer (GP posterior + deep-ensemble) + the canonical reliability report",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KHALO",
+      "sourced": {
+        "file": "track6_surrogate_uq/uq_calibration_summary.csv",
+        "ece": "0.0327 +/- 0.0136",
+        "coverage_90": "0.888 +/- 0.034",
+        "result": "PASS (mean)"
+      },
+      "live_gp_on_cgyro": {
+        "ece": 0.0771,
+        "coverage_90": 0.8,
+        "n": 10
+      }
+    }
+  },
+  "KHEAT": {
+    "card": {
+      "name": "KHEAT",
+      "function": "heating&CD",
+      "status": "PARTIAL",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "RF/NBI physics codes",
+      "gates": [],
+      "note": "RF / NBI heating & current-drive actuator-response surrogate",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KHEAT",
+      "status": "PARTIAL",
+      "sourced": "DEC-dispatch adjacency",
+      "note": "RF / NBI heating & current-drive actuator-response surrogate"
+    }
+  },
+  "KISO": {
+    "card": {
+      "name": "KISO",
+      "function": "isotopes",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "activation-transport + separation model (full spectrum)",
+      "gates": [],
+      "note": "isotope code \u2014 (a) servo surrogate imitating the PI fuel-mix loop, and (b) medical-isotope YIELD from real FENDL-3.2 (n,x) cross-sections convolved with the neutron spectrum (Mo-99/Tc-99m flagship)",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KISO",
+      "live_servo": {
+        "r2_mean_over_4_species": 0.723,
+        "n_test": 200
+      },
+      "sourced": "track5_control/isotope_control_summary.csv (closed-loop 13.6x vs open)",
+      "live_medical_yield": {
+        "n_isotopes": 6,
+        "flagship_Mo-99": {
+          "sigma_thermal_b": 0.1321,
+          "sigma_14MeV_b": 0.00054
+        },
+        "ranked_by_thermal_yield": [
+          "Lu-177",
+          "Sm-153",
+          "Re-186",
+          "Co-60",
+          "Mo-99",
+          "Cu-67"
+        ],
+        "source": "FENDL-3.2 (n,x) cross-sections, 2-group fusion spectrum",
+        "note": "full-spectrum convolution + separation chemistry = the fidelity upgrade"
+      }
+    }
+  },
+  "KLAW": {
+    "card": {
+      "name": "KLAW",
+      "function": "eqn-discovery",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "CGYRO-urep",
+      "retired_by": "first-principles reduced-transport theory",
+      "gates": [],
+      "note": "equation discovery \u2014 sparse regression finds a compact closure for log10(Q_tot) over the CGYRO map (mu=400)",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KLAW",
+      "live": {
+        "r2_fit": 0.903,
+        "n_terms_selected": 7,
+        "discovered_terms": [
+          [
+            "a_LT",
+            -10.301
+          ],
+          [
+            "s",
+            -0.718
+          ],
+          [
+            "s^2",
+            -4.205
+          ],
+          [
+            "a_LT*s",
+            0.287
+          ],
+          [
+            "relu(a_LT-2.1)",
+            13.616
+          ],
+          [
+            "relu(a_LT-2.1)^2",
+            -2.873
+          ],
+          [
+            "a_LT*s^2",
+            4.226
+          ]
+        ]
+      },
+      "note": "compact closure discovered from the 16/16 CGYRO map"
+    }
+  },
+  "KMAT": {
+    "card": {
+      "name": "KMAT",
+      "function": "MATERIALS",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "SIM",
+      "retired_by": "DFT (VASP / Quantum ESPRESSO)",
+      "gates": [
+        "KX-L1-A4",
+        "BR-L2-A8"
+      ],
+      "note": "ML+DFT alloy / HEA screen (CHGNet) for structural & functional materials; screen BUILT, dpa/lifetime roadmap",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KMAT",
+      "n_candidates_screened": 8,
+      "top": {
+        "name": "BLK_Al50Ti33Zr10Cr7",
+        "note": "blanket structural IP#12 (A34)",
+        "comp": {
+          "Al": 8,
+          "Ti": 5,
+          "Zr": 2,
+          "Cr": 1
+        },
+        "a0_vegard": 3.2653,
+        "E_per_atom": -6.3282,
+        "Eform_proxy": -0.393,
+        "V_per_atom": 16.977
+      },
+      "sourced": "chgnet_screen_results.json (DFT-validated)",
+      "note": "alloy screen BUILT; dpa/lifetime roadmap inside KMAT"
+    }
+  },
+  "KOIL": {
+    "card": {
+      "name": "KOIL",
+      "function": "MAGNET",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "SIM",
+      "retired_by": "full FE electromechanical solve",
+      "gates": [
+        "BR-MT1",
+        "BR-MT3"
+      ],
+      "note": "magnet-twin stress-field surrogate + quench-precursor early-warning; REBCO per-turn Wilson-form hoop stress",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KOIL",
+      "live_strain_surrogate": {
+        "rel_l2": 0.0038,
+        "r2": 1.0,
+        "n_turns": 82
+      },
+      "sourced_mt1": {
+        "file": "track_MT1_magnet_twin/ac_mt1_verdict.csv",
+        "headline": "surrogate 0.24% rel-L2 @ 0.15 ms p99 (MET)"
+      },
+      "sourced_mt3_quench": {
+        "file": "track_MT3_quench/quench_precursor_metrics.csv",
+        "headline": "quench precursor 47.2 ms lead, AUC 0.9998, FAR 2.4%"
+      }
+    }
+  },
+  "KORE": {
+    "card": {
+      "name": "KORE",
+      "function": "EQUIL",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "ANALYTIC",
+      "retired_by": "classical Grad-Shafranov solver",
+      "gates": [
+        "AC-16",
+        "AC-L1"
+      ],
+      "note": "fast learned MHD-equilibrium accelerator (neural surrogate, 3-seed ensemble); Grad-Shafranov, not turbulence",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KORE",
+      "live_learned_surrogate": {
+        "rel_l2_vs_analytic": 0.0035,
+        "ensemble_cov90": 0.778,
+        "infer_ms": 0.421,
+        "grid": "16x16",
+        "n_heldout": 120
+      },
+      "sourced": {
+        "file": "track_L1_neural_operator/operator_vs_pinn.csv",
+        "headline": "track FNO best 2.5% rel-L2 vs 1% bar (MISSED); ~1 s classical solver -> sub-ms surrogate"
+      }
+    }
+  },
+  "KPATH": {
+    "card": {
+      "name": "KPATH",
+      "function": "operational",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "TWIN",
+      "retired_by": "operational scenario optimizer (device-validated)",
+      "gates": [],
+      "note": "operational controller surrogate \u2014 (state, setpoint) -> command; imitation of the MPC over the closed-loop control traces",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KPATH",
+      "live": {
+        "r2_mean_over_6_axes": 0.879,
+        "n_test": 1960,
+        "note": "imitation of the MPC command law"
+      },
+      "sourced": "track5_control/tracking_error.csv (MPC RMS <5% on all 6)"
+    }
+  },
+  "KPILOT": {
+    "card": {
+      "name": "KPILOT",
+      "function": "agentic-AI",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "n/a",
+      "retired_by": "full LLM agent runtime over the fleet",
+      "gates": [],
+      "note": "fleet orchestration layer \u2014 routes a plain-language query to the right KODEX code and runs it; the LLM reasoning layer is the roadmap upgrade",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KPILOT",
+      "live_routing": {
+        "what's the heat flux at gradient 3.5 shear 1.6?": "KYRO",
+        "is this command inside the safe envelope?": "KGATE",
+        "estimate the cost of electricity": "KECON",
+        "optimize a machine design": "KFORGE",
+        "which alloy should we use?": "KMAT"
+      },
+      "note": "keyword tool-router over the fleet; a full LLM agent is the roadmap upgrade"
+    }
+  },
+  "KQROSS": {
+    "card": {
+      "name": "KQROSS",
+      "function": "QRE",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "fault-tolerant quantum hardware (not available this decade)",
+      "gates": [
+        "AC-43",
+        "BR-SX-08"
+      ],
+      "note": "fault-tolerant quantum resource estimator + crossover analysis \u2014 a validated no-crossover result (when/if quantum beats classical)",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KQROSS",
+      "verdict": "no crossover this decade; survives optimistic corner",
+      "result_type": "validated negative result (BUILT)",
+      "caveat": "MANDATORY: no quantum advantage this decade",
+      "live": {
+        "file": "track7_quantum_resources/crossover_verdict.csv",
+        "n_kernels": 3,
+        "columns": [
+          "kernel",
+          "crossover_problem_size",
+          "interesting_problem_size",
+          "logical_qubits_at_interesting",
+          "T_count_at_interesting",
+          "meets_2030_bar"
+        ]
+      }
+    }
+  },
+  "KQUBIT": {
+    "card": {
+      "name": "KQUBIT",
+      "function": "QML",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "SIM",
+      "retired_by": "fault-tolerant quantum hardware (not available this decade)",
+      "gates": [
+        "AC-44",
+        "KX-L3-A4"
+      ],
+      "note": "quantum-ML surrogate (VQE) \u2014 a validated no-advantage rigor card: statevector exact, noisy never reaches chemical accuracy",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KQUBIT",
+      "sourced": "track8_vqe_poc/vqe_convergence.csv + vqe_scale_wall.csv",
+      "verdict": "statevector 0.0 mHa (PASS); noisy 14x-1305x over chem-acc (sim-only)",
+      "result_type": "validated negative result (BUILT \u2014 a complete finding)",
+      "caveat": "MANDATORY: no quantum advantage this decade"
+    }
+  },
+  "KRAD": {
+    "card": {
+      "name": "KRAD",
+      "function": "radiation-control",
+      "status": "ROADMAP",
+      "phase": 3,
+      "provenance": "n/a",
+      "retired_by": "radiation transport + control",
+      "gates": [],
+      "note": "impurity seeding / radiation / divertor-detachment control",
+      "available": false
+    },
+    "benchmark": {
+      "member": "KRAD",
+      "status": "ROADMAP",
+      "sourced": "fold into KEDGE edge campaign",
+      "note": "impurity seeding / radiation / divertor-detachment control"
+    }
+  },
+  "KSENSE": {
+    "card": {
+      "name": "KSENSE",
+      "function": "QSENSE",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "deployed physical diagnostic hardware",
+      "gates": [
+        "HX-29"
+      ],
+      "note": "quantum-sensor diagnostic evaluation (NV/SQUID/SERF); a validated null gain where disruptions live (the MHD floor dominates the sensor floor)",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KSENSE",
+      "verdict": "dAUC ~ -0.04..+0.003, d-warning ~0 ms vs conventional coil",
+      "result_type": "validated null result (BUILT)",
+      "live": {
+        "file": "track8b_quantum_sensing/sensing_to_disruption_gain.csv",
+        "n_rows": 8,
+        "columns": [
+          "scenario",
+          "sensor_class",
+          "noise_floor_T_rtHz",
+          "b_mode_scale_T",
+          "sigma_note",
+          "AUC"
+        ]
+      }
+    }
+  },
+  "KTENSOR": {
+    "card": {
+      "name": "KTENSOR",
+      "function": "TN",
+      "status": "PARTIAL",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "exact many-body / quantum simulation",
+      "gates": [
+        "KX-L3"
+      ],
+      "note": "tensor-network simulation & compression \u2014 a classical many-body method and a bridge to quantum for kernel problems",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KTENSOR",
+      "sourced": "track_R3_3_tensor_network",
+      "note": "tensor-network results on disk; surrogate wrapper is thin"
+    }
+  },
+  "KWARD": {
+    "card": {
+      "name": "KWARD",
+      "function": "DISRUPT",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "REAL-ANCHOR",
+      "retired_by": "physicist-verified disruption labels + full precursor diagnostics",
+      "gates": [
+        "AC-20",
+        "AC-21"
+      ],
+      "note": "disruption early-warning \u2014 real-device (592 MAST shots), calibrated ensemble + per-shot OOD gate; advisory, downstream of the KGATE clamp",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KWARD",
+      "live_real_device": {
+        "source": "592 real MAST shots (FAIR-MAST), fixed 50 ms window",
+        "auc": 0.98,
+        "auc_precursor_only_no_Ip_variability": 0.984,
+        "ece": 0.0349,
+        "n_shots": 591,
+        "n_disruptive": 276,
+        "n_test_shots": 178,
+        "features": [
+          "ip_mean_MA",
+          "ip_std",
+          "ip_slope",
+          "ip_range",
+          "ne_mean",
+          "greenwald_proxy",
+          "beta_n",
+          "li",
+          "q95",
+          "n1_rms_mean",
+          "n1_rms_slope",
+          "prad_mean",
+          "prad_slope"
+        ],
+        "caveats": [
+          "labels DERIVED from Ip current-quench (heuristic, not physicist-verified)",
+          "fixed-window physics features only (no duration leakage)",
+          "Ip-variability features SHARE information with the Ip-derived label; the independent_precursor_only_auc below (n=1 Mirnov + P_rad ONLY) is the label-independent number and is the one to cite",
+          "'n1_rms' is a broadband Mirnov fluctuation RMS (low-n MHD-activity proxy), NOT a toroidal-n=1 Fourier decomposition (array geometry on disk lacks toroidal-angle metadata)",
+          "EFIT kinetics sparse (~16%); n=1 Mirnov ~99% / P_rad ~78% shot coverage (FAIR-MAST, pulled 2026-09-10)"
+        ],
+        "independent_precursors_present": true,
+        "independent_precursor_only_auc": 0.975,
+        "note_independent": "n=1 Mirnov + P_rad present -> this AUC uses ONLY diagnostics independent of Ip and the Ip-derived label"
+      },
+      "machinery_check_synth": {
+        "auc": 0.916
+      },
+      "sourced_twin": {
+        "file": "track4_disruption/disruption_metrics.csv",
+        "note": "prior twin-synthetic result AUC 0.990 (superseded by real-device above)"
+      }
+    }
+  },
+  "KYRO": {
+    "card": {
+      "name": "KYRO",
+      "function": "TRANSPORT",
+      "status": "BUILT",
+      "phase": 1,
+      "provenance": "CGYRO-urep",
+      "retired_by": "CGYRO (nonlinear gyrokinetic)",
+      "gates": [
+        "BR-L2-A12",
+        "BR-L2-A1e",
+        "BR-L2-A1c"
+      ],
+      "note": "CGYRO turbulence-transport surrogate over the complete 16/16 A1e map (total heat flux Q_tot + turbulent/quiet); mu=400 rep, real-mass gold deferred",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KYRO",
+      "accuracy": {
+        "r2_log_Qtot": 0.858,
+        "rmse_log_Qtot": 0.857,
+        "coverage_90": 0.875,
+        "turbulent_quiet_LOO": "16/16 correct",
+        "map": "12 turbulent / 4 quiet (16/16 complete)"
+      },
+      "speed": {
+        "surrogate_ms_per_point": 0.265,
+        "cgyro_gpu_h_per_point_measured": 2.89,
+        "speedup_x_vs_cgyro": "3.9e+07",
+        "speedup_note": "ms inference vs GPU-hours for the CONVERGED flux value",
+        "fidelity": "representative mu=400; real-mass gold deferred"
+      },
+      "provenance": "COMPLETE 16/16 CGYRO A1e map (mu=400); operating point subcritical"
+    }
+  }
+}

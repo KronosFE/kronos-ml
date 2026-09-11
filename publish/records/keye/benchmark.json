@@ -1,0 +1,13 @@
+{
+  "member": "KEYE",
+  "live_fault_detection": {
+    "detection_rate": 0.767,
+    "false_alarm_rate": 0.0,
+    "n_trials": 300,
+    "method": "3-sigma same-class residual"
+  },
+  "sourced": {
+    "file": "track8b_quantum_sensing/sensing_to_disruption_gain.csv",
+    "finding": "quantum sensing buys ~0 gain where disruptions live (model-limited)"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "member": "KFUEL",
+  "live_nominal": {
+    "net_breeding_kg_yr": 1.936,
+    "self_sufficient": true,
+    "doubling_time_yr": 5.17
+  },
+  "note": "reduced systems model seeded from tritium physics (12.32 yr half-life); full fuel-cycle code is the roadmap upgrade"
+}

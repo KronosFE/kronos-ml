@@ -1,0 +1,16 @@
+{
+  "member": "KOIL",
+  "live_strain_surrogate": {
+    "rel_l2": 0.0038,
+    "r2": 1.0,
+    "n_turns": 82
+  },
+  "sourced_mt1": {
+    "file": "track_MT1_magnet_twin/ac_mt1_verdict.csv",
+    "headline": "surrogate 0.24% rel-L2 @ 0.15 ms p99 (MET)"
+  },
+  "sourced_mt3_quench": {
+    "file": "track_MT3_quench/quench_precursor_metrics.csv",
+    "headline": "quench precursor 47.2 ms lead, AUC 0.9998, FAR 2.4%"
+  }
+}

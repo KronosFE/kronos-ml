@@ -1,0 +1,10 @@
+{
+  "member": "KFUSE",
+  "live_multifidelity": {
+    "rmse_low_fidelity_only": 1.481,
+    "rmse_multifidelity": 1.05,
+    "r2_multifidelity": 0.787,
+    "note": "residual GP correction from 16 mu=400 CGYRO points reduces LF error"
+  },
+  "fidelities": "low = analytic proxy; high = mu=400 CGYRO; 3rd = real-mass gold (deferred)"
+}

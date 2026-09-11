@@ -1,0 +1,13 @@
+{
+  "member": "KFLOW",
+  "sourced_gnn": {
+    "file": "track3_gnn/gnn_imputation.csv",
+    "k_failed": 8,
+    "gnn_rmse": 0.0844,
+    "naive_rmse": 0.1721,
+    "gnn_beats_naive": true,
+    "AC18_bar_0.05": "MISSED (kept honest)"
+  },
+  "live_classmean_baseline_rmse_k8": 1.0215,
+  "live_note": "crude same-class-mean baseline (worse than the track's inverse-distance naive 0.172 and the trained GNN 0.084); shipped predict() uses the same-class imputation"
+}

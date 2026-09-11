@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use KODEX, please cite it as below."
+title: "KODEX: the Kronos Family of Codes (AI/ML fusion surrogate suite)"
+version: "0.1.0"
+date-released: "2026-09-10"
+license: Apache-2.0
+repository-code: "https://github.com/KronosFE/kronos-ml"
+url: "https://kronosfusionenergy.com/kodex"
+type: software
+authors:
+  - family-names: Ford
+    given-names: "P. I."
+    orcid: "https://orcid.org/0000-0003-0395-1752"
+    affiliation: "Kronos Fusion Energy"
+keywords:
+  - "fusion energy"
+  - "spherical tokamak"
+  - "D-3He"
+  - "gyrokinetic turbulence"
+  - "negative triangularity"
+  - "AI/ML surrogate model"
+  - "uncertainty quantification"
+  - "conformal calibration"
+  - "disruption prediction"
+  - "digital twin"
+  - "control barrier function"
+  - "neutronics"
+  - "medical isotopes"
+  - "Kronos Fusion Energy"
+references:
+  - type: dataset
+    title: "CGYRO A1e nonlinear-kinetic turbulence map (mu=400 representative)"
+    doi: "10.5281/zenodo.22136279"
+  - type: generic
+    title: "Kronos De-Risking Register / publication series"
+    doi: "10.5281/zenodo.22645689"
+  - type: dataset
+    title: "Kronos AI + Quantum deposit"
+    doi: "10.5281/zenodo.21842371"

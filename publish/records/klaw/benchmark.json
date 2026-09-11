@@ -1,0 +1,38 @@
+{
+  "member": "KLAW",
+  "live": {
+    "r2_fit": 0.903,
+    "n_terms_selected": 7,
+    "discovered_terms": [
+      [
+        "a_LT",
+        -10.301
+      ],
+      [
+        "s",
+        -0.718
+      ],
+      [
+        "s^2",
+        -4.205
+      ],
+      [
+        "a_LT*s",
+        0.287
+      ],
+      [
+        "relu(a_LT-2.1)",
+        13.616
+      ],
+      [
+        "relu(a_LT-2.1)^2",
+        -2.873
+      ],
+      [
+        "a_LT*s^2",
+        4.226
+      ]
+    ]
+  },
+  "note": "compact closure discovered from the 16/16 CGYRO map"
+}

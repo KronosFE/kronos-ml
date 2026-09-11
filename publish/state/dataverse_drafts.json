@@ -1,0 +1,157 @@
+{
+  "KAIROS": {
+    "pid": "doi:10.7910/DVN/GOZGCM",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GOZGCM&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KBREED": {
+    "pid": "doi:10.7910/DVN/OPJHP3",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OPJHP3&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KBURN": {
+    "pid": "doi:10.7910/DVN/ITN6JZ",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ITN6JZ&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KDRIVE": {
+    "pid": "doi:10.7910/DVN/YKKLQ7",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YKKLQ7&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KECON": {
+    "pid": "doi:10.7910/DVN/WBHQ7S",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/WBHQ7S&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KEYE": {
+    "pid": "doi:10.7910/DVN/5UILC8",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5UILC8&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KFLOW": {
+    "pid": "doi:10.7910/DVN/XUXC7B",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XUXC7B&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KFLUX": {
+    "pid": "doi:10.7910/DVN/3F0NCW",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/3F0NCW&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KFORGE": {
+    "pid": "doi:10.7910/DVN/OVOVVN",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OVOVVN&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KFUEL": {
+    "pid": "doi:10.7910/DVN/89A8GS",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/89A8GS&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KFUSE": {
+    "pid": "doi:10.7910/DVN/SMA2OP",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SMA2OP&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KGATE": {
+    "pid": "doi:10.7910/DVN/2CKPZH",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2CKPZH&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KGEN": {
+    "pid": "doi:10.7910/DVN/OCTF8U",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCTF8U&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KHALO": {
+    "pid": "doi:10.7910/DVN/V5YM23",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/V5YM23&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KISO": {
+    "pid": "doi:10.7910/DVN/ELXAEY",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ELXAEY&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KLAW": {
+    "pid": "doi:10.7910/DVN/ANAFXK",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ANAFXK&version=DRAFT",
+    "done": true
+  },
+  "KMAT": {
+    "pid": "doi:10.7910/DVN/IJG9FT",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IJG9FT&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KOIL": {
+    "pid": "doi:10.7910/DVN/N5WLNR",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/N5WLNR&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KORE": {
+    "pid": "doi:10.7910/DVN/DCFLOI",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DCFLOI&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KPATH": {
+    "pid": "doi:10.7910/DVN/8QIUD4",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/8QIUD4&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KPILOT": {
+    "pid": "doi:10.7910/DVN/EYD6FZ",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EYD6FZ&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KQROSS": {
+    "pid": "doi:10.7910/DVN/IIDBCF",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IIDBCF&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KQUBIT": {
+    "pid": "doi:10.7910/DVN/2BC8BL",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2BC8BL&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KSENSE": {
+    "pid": "doi:10.7910/DVN/5LQJAF",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5LQJAF&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KWARD": {
+    "pid": "doi:10.7910/DVN/VPYXHS",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VPYXHS&version=DRAFT",
+    "done": true,
+    "review": true
+  },
+  "KYRO": {
+    "pid": "doi:10.7910/DVN/2YQQOX",
+    "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2YQQOX&version=DRAFT",
+    "done": true,
+    "review": true
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "KAIROS": {
+    "zenodo_doi": "10.5281/zenodo.22694265",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694265",
+    "osf_url": "https://osf.io/db6uh/",
+    "figshare_doi": "10.6084/m9.figshare.33553966",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33553966",
+    "harvard_doi": "10.7910/DVN/GOZGCM",
+    "harvard_url": "https://doi.org/10.7910/DVN/GOZGCM",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KBREED": {
+    "zenodo_doi": "10.5281/zenodo.22694267",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694267",
+    "osf_url": "https://osf.io/2m3ce/",
+    "figshare_doi": "10.6084/m9.figshare.33559312",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559312",
+    "harvard_doi": "10.7910/DVN/OPJHP3",
+    "harvard_url": "https://doi.org/10.7910/DVN/OPJHP3",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KBURN": {
+    "zenodo_doi": "10.5281/zenodo.22694269",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694269",
+    "osf_url": "https://osf.io/8e6fn/",
+    "figshare_doi": "10.6084/m9.figshare.33559324",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559324",
+    "harvard_doi": "10.7910/DVN/ITN6JZ",
+    "harvard_url": "https://doi.org/10.7910/DVN/ITN6JZ",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KDRIVE": {
+    "zenodo_doi": "10.5281/zenodo.22694271",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694271",
+    "osf_url": "https://osf.io/xhkuy/",
+    "figshare_doi": "10.6084/m9.figshare.33559333",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559333",
+    "harvard_doi": "10.7910/DVN/YKKLQ7",
+    "harvard_url": "https://doi.org/10.7910/DVN/YKKLQ7",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KECON": {
+    "zenodo_doi": "10.5281/zenodo.22694273",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694273",
+    "osf_url": "https://osf.io/b5qmx/",
+    "figshare_doi": "10.6084/m9.figshare.33559345",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559345",
+    "harvard_doi": "10.7910/DVN/WBHQ7S",
+    "harvard_url": "https://doi.org/10.7910/DVN/WBHQ7S",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KEYE": {
+    "zenodo_doi": "10.5281/zenodo.22694279",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694279",
+    "osf_url": "https://osf.io/5qzp4/",
+    "figshare_doi": "10.6084/m9.figshare.33559357",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559357",
+    "harvard_doi": "10.7910/DVN/5UILC8",
+    "harvard_url": "https://doi.org/10.7910/DVN/5UILC8",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KFLOW": {
+    "zenodo_doi": "10.5281/zenodo.22694283",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694283",
+    "osf_url": "https://osf.io/hjrzb/",
+    "figshare_doi": "10.6084/m9.figshare.33559369",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559369",
+    "harvard_doi": "10.7910/DVN/XUXC7B",
+    "harvard_url": "https://doi.org/10.7910/DVN/XUXC7B",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KFLUX": {
+    "zenodo_doi": "10.5281/zenodo.22694287",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694287",
+    "osf_url": "https://osf.io/fmjc2/",
+    "figshare_doi": "10.6084/m9.figshare.33559378",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559378",
+    "harvard_doi": "10.7910/DVN/3F0NCW",
+    "harvard_url": "https://doi.org/10.7910/DVN/3F0NCW",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KFORGE": {
+    "zenodo_doi": "10.5281/zenodo.22694289",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694289",
+    "osf_url": "https://osf.io/5zg6j/",
+    "figshare_doi": "10.6084/m9.figshare.33559390",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559390",
+    "harvard_doi": "10.7910/DVN/OVOVVN",
+    "harvard_url": "https://doi.org/10.7910/DVN/OVOVVN",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KFUEL": {
+    "zenodo_doi": "10.5281/zenodo.22694291",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694291",
+    "osf_url": "https://osf.io/xuz8a/",
+    "figshare_doi": "10.6084/m9.figshare.33559402",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559402",
+    "harvard_doi": "10.7910/DVN/89A8GS",
+    "harvard_url": "https://doi.org/10.7910/DVN/89A8GS",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KFUSE": {
+    "zenodo_doi": "10.5281/zenodo.22694294",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694294",
+    "osf_url": "https://osf.io/exhkc/",
+    "figshare_doi": "10.6084/m9.figshare.33559414",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559414",
+    "harvard_doi": "10.7910/DVN/SMA2OP",
+    "harvard_url": "https://doi.org/10.7910/DVN/SMA2OP",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KGATE": {
+    "zenodo_doi": "10.5281/zenodo.22694297",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694297",
+    "osf_url": "https://osf.io/mbu37/",
+    "figshare_doi": "10.6084/m9.figshare.33559423",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559423",
+    "harvard_doi": "10.7910/DVN/2CKPZH",
+    "harvard_url": "https://doi.org/10.7910/DVN/2CKPZH",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KGEN": {
+    "zenodo_doi": "10.5281/zenodo.22694307",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694307",
+    "osf_url": "https://osf.io/svbwq/",
+    "figshare_doi": "10.6084/m9.figshare.33559435",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559435",
+    "harvard_doi": "10.7910/DVN/OCTF8U",
+    "harvard_url": "https://doi.org/10.7910/DVN/OCTF8U",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KHALO": {
+    "zenodo_doi": "10.5281/zenodo.22694309",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694309",
+    "osf_url": "https://osf.io/ne89y/",
+    "figshare_doi": "10.6084/m9.figshare.33559447",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559447",
+    "harvard_doi": "10.7910/DVN/V5YM23",
+    "harvard_url": "https://doi.org/10.7910/DVN/V5YM23",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KISO": {
+    "zenodo_doi": "10.5281/zenodo.22694311",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694311",
+    "osf_url": "https://osf.io/hjqek/",
+    "figshare_doi": "10.6084/m9.figshare.33559459",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559459",
+    "harvard_doi": "10.7910/DVN/ELXAEY",
+    "harvard_url": "https://doi.org/10.7910/DVN/ELXAEY",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KLAW": {
+    "zenodo_doi": "10.5281/zenodo.22694315",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694315",
+    "osf_url": "https://osf.io/kfp4t/",
+    "figshare_doi": "10.6084/m9.figshare.33559468",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559468",
+    "harvard_doi": "10.7910/DVN/ANAFXK",
+    "harvard_url": "https://doi.org/10.7910/DVN/ANAFXK",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KMAT": {
+    "zenodo_doi": "10.5281/zenodo.22694319",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694319",
+    "osf_url": "https://osf.io/y4j2p/",
+    "figshare_doi": "10.6084/m9.figshare.33559480",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559480",
+    "harvard_doi": "10.7910/DVN/IJG9FT",
+    "harvard_url": "https://doi.org/10.7910/DVN/IJG9FT",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KOIL": {
+    "zenodo_doi": "10.5281/zenodo.22694323",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694323",
+    "osf_url": "https://osf.io/2rb68/",
+    "figshare_doi": "10.6084/m9.figshare.33559492",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559492",
+    "harvard_doi": "10.7910/DVN/N5WLNR",
+    "harvard_url": "https://doi.org/10.7910/DVN/N5WLNR",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KORE": {
+    "zenodo_doi": "10.5281/zenodo.22694327",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694327",
+    "osf_url": "https://osf.io/sxm5v/",
+    "figshare_doi": "10.6084/m9.figshare.33559504",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559504",
+    "harvard_doi": "10.7910/DVN/DCFLOI",
+    "harvard_url": "https://doi.org/10.7910/DVN/DCFLOI",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KPATH": {
+    "zenodo_doi": "10.5281/zenodo.22694329",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694329",
+    "osf_url": "https://osf.io/fbcyw/",
+    "figshare_doi": "10.6084/m9.figshare.33559513",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559513",
+    "harvard_doi": "10.7910/DVN/8QIUD4",
+    "harvard_url": "https://doi.org/10.7910/DVN/8QIUD4",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KPILOT": {
+    "zenodo_doi": "10.5281/zenodo.22694331",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694331",
+    "osf_url": "https://osf.io/aqxe8/",
+    "figshare_doi": "10.6084/m9.figshare.33559525",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559525",
+    "harvard_doi": "10.7910/DVN/EYD6FZ",
+    "harvard_url": "https://doi.org/10.7910/DVN/EYD6FZ",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KQROSS": {
+    "zenodo_doi": "10.5281/zenodo.22694333",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694333",
+    "osf_url": "https://osf.io/zp82a/",
+    "figshare_doi": "10.6084/m9.figshare.33559537",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559537",
+    "harvard_doi": "10.7910/DVN/IIDBCF",
+    "harvard_url": "https://doi.org/10.7910/DVN/IIDBCF",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KQUBIT": {
+    "zenodo_doi": "10.5281/zenodo.22694336",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694336",
+    "osf_url": "https://osf.io/eqr9z/",
+    "figshare_doi": "10.6084/m9.figshare.33559546",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559546",
+    "harvard_doi": "10.7910/DVN/2BC8BL",
+    "harvard_url": "https://doi.org/10.7910/DVN/2BC8BL",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KSENSE": {
+    "zenodo_doi": "10.5281/zenodo.22694338",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694338",
+    "osf_url": "https://osf.io/psr8h/",
+    "figshare_doi": "10.6084/m9.figshare.33559558",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559558",
+    "harvard_doi": "10.7910/DVN/5LQJAF",
+    "harvard_url": "https://doi.org/10.7910/DVN/5LQJAF",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KWARD": {
+    "zenodo_doi": "10.5281/zenodo.22694342",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694342",
+    "osf_url": "https://osf.io/ugfpr/",
+    "figshare_doi": "10.6084/m9.figshare.33559570",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559570",
+    "harvard_doi": "10.7910/DVN/VPYXHS",
+    "harvard_url": "https://doi.org/10.7910/DVN/VPYXHS",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  },
+  "KYRO": {
+    "zenodo_doi": "10.5281/zenodo.22694348",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.22694348",
+    "osf_url": "https://osf.io/5m6vu/",
+    "figshare_doi": "10.6084/m9.figshare.33559582",
+    "figshare_url": "https://doi.org/10.6084/m9.figshare.33559582",
+    "harvard_doi": "10.7910/DVN/2YQQOX",
+    "harvard_url": "https://doi.org/10.7910/DVN/2YQQOX",
+    "github_url": "https://github.com/KronosFE/kronos-ml"
+  }
+}

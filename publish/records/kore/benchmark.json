@@ -1,0 +1,14 @@
+{
+  "member": "KORE",
+  "live_learned_surrogate": {
+    "rel_l2_vs_analytic": 0.0035,
+    "ensemble_cov90": 0.778,
+    "infer_ms": 0.496,
+    "grid": "16x16",
+    "n_heldout": 120
+  },
+  "sourced": {
+    "file": "track_L1_neural_operator/operator_vs_pinn.csv",
+    "headline": "track FNO best 2.5% rel-L2 vs 1% bar (MISSED); ~1 s classical solver -> sub-ms surrogate"
+  }
+}

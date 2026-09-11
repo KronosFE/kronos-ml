@@ -1,0 +1,18 @@
+{
+  "member": "KQROSS",
+  "verdict": "no crossover this decade; survives optimistic corner",
+  "result_type": "validated negative result (BUILT)",
+  "caveat": "MANDATORY: no quantum advantage this decade",
+  "live": {
+    "file": "track7_quantum_resources/crossover_verdict.csv",
+    "n_kernels": 3,
+    "columns": [
+      "kernel",
+      "crossover_problem_size",
+      "interesting_problem_size",
+      "logical_qubits_at_interesting",
+      "T_count_at_interesting",
+      "meets_2030_bar"
+    ]
+  }
+}

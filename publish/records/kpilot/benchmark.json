@@ -1,0 +1,11 @@
+{
+  "member": "KPILOT",
+  "live_routing": {
+    "what's the heat flux at gradient 3.5 shear 1.6?": "KYRO",
+    "is this command inside the safe envelope?": "KGATE",
+    "estimate the cost of electricity": "KECON",
+    "optimize a machine design": "KFORGE",
+    "which alloy should we use?": "KMAT"
+  },
+  "note": "keyword tool-router over the fleet; a full LLM agent is the roadmap upgrade"
+}
