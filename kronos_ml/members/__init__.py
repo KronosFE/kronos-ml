@@ -16,3 +16,5 @@ from . import advanced     # noqa: F401  KLAW, KDRIVE, KGEN, KFUEL
 from . import capstone     # noqa: F401  KFORGE, KPILOT
 from . import neutronics   # noqa: F401  KBREED, KFLUX
 from . import roadmap      # noqa: F401  KHEAT, KEDGE, KRAD, KECON
+from . import foundation   # noqa: F401  KMIND (v0.3.0)
+from . import quantum_v3    # noqa: F401  KMIT, KLINQ (v0.3.0)

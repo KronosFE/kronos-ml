@@ -27,7 +27,7 @@
         "escapes": 0,
         "catch_rate": 1.0
       },
-      "live_mpc_step_us": 155.4,
+      "live_mpc_step_us": 77.8,
       "sourced": {
         "file": "track5_control/clamp_activation_stats.csv",
         "headline": "0 escapes / 150k steps / 3000 injected (AC-25); tracking <5%"
@@ -178,7 +178,7 @@
       "gates": [
         "KX-L3"
       ],
-      "note": "REAL quantum dynamics \u2014 Trotterized time-evolution of a transverse-field Ising 'kinetic' Hamiltonian (PennyLane); the honest 1/n_steps cost curve for simulating plasma-like dynamics on a quantum computer. Runs on a simulator now, hardware pluggable",
+      "note": "REAL quantum dynamics \u2014 Trotterized time-evolution of a transverse-field Ising 'kinetic' Hamiltonian (PennyLane); the honest 1/n_steps cost curve for simulating plasma-like dynamics on a quantum computer. Runs on a simulator now, hardware pluggable; quantum's role in fusion is post-~2036",
       "available": true
     },
     "benchmark": {
@@ -200,7 +200,7 @@
           "active_backend": "default",
           "ran_on_real_hardware": false,
           "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
-          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
         },
         "verdict": "REAL Trotterized quantum dynamics: 1st-order error falls 1.34637 -> 0.03381 from 1 to 32 steps (~1/n) \u2014 the honest cost curve for simulating plasma-like Hamiltonian dynamics on a quantum computer. Runs on real hardware with KODEX_QC_BACKEND=ibm. No advantage at this size; a real, testable pipeline."
       },
@@ -613,6 +613,70 @@
       "note": "compact closure discovered from the 16/16 CGYRO map"
     }
   },
+  "KLINQ": {
+    "card": {
+      "name": "KLINQ",
+      "function": "QLINSOLVE",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "SIM",
+      "retired_by": "fault-tolerant quantum hardware (not available this decade)",
+      "gates": [
+        "KX-L3"
+      ],
+      "note": "REAL quantum linear solver \u2014 a variational quantum linear solver (VQLS) prepares the solution of a small reduced-MHD linear system with a real quantum circuit (sim now, hardware pluggable), plus an honest fault-tolerant HHL resource estimate. No advantage at real scale; quantum's role in fusion is post-~2036",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KLINQ",
+      "live_quantum_linear_solver": {
+        "problem": "solve A x = b for a 4x4 reduced-MHD Laplacian (SPD) with a real quantum circuit",
+        "method": "variational quantum linear solver (VQLS), global overlap cost, Powell optimization",
+        "framework": "PennyLane (sim now; Hadamard-test cost on real hardware, pluggable)",
+        "N": 4,
+        "n_qubits": 2,
+        "cost_final": 0.0,
+        "solution_fidelity_vs_classical": 1.0,
+        "residual_rel": 0.0,
+        "x_quantum": [
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "x_classical": [
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "ft_hhl_resource_estimate": {
+          "assumed_system": "N~1e+06 sparse SPD (reduced-MHD grid), kappa~1e+03",
+          "logical_qubits_needed": 31,
+          "physical_qubits_needed": "~4e+04",
+          "surface_code_phys_per_logical": 1250,
+          "roadmap_year_reach_logical": 2031,
+          "hardware_today": "~1e2-1e3 physical qubits, no error-corrected logical qubits",
+          "caveats": [
+            "HHL needs fault tolerance + sparse, well-conditioned A + efficient state prep, and returns |x> (aggregate readout), not the full vector",
+            "no fusion HHL advantage this decade \u2014 meaningful role post-~2036"
+          ]
+        },
+        "backend": {
+          "active_backend": "default",
+          "ran_on_real_hardware": false,
+          "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
+        },
+        "verdict": "REAL variational quantum linear solver recovers the 4x4 reduced-MHD solve at solution fidelity 1.0 vs classical (rel-residual 0.0) \u2014 a runnable quantum linear solver TODAY. The fault-tolerant HHL route for a fusion-scale (N~1e6) solve needs ~31 logical -> ~4e+04 physical qubits (roadmap ~2031). HONEST: no advantage at real scale; quantum's meaningful role in fusion is post-~2036. Runs on hardware with KODEX_QC_BACKEND=ibm."
+      },
+      "caveats": [
+        "no quantum advantage \u2014 quantum's role in fusion is post-~2036",
+        "VQLS residual is read from the simulator here; on hardware it needs Hadamard tests and its cost landscape can have barren plateaus at scale",
+        "the 4x4 system is a toy; classical solves it instantly \u2014 the point is a real, honest, hardware-ready quantum pipeline, not a speedup"
+      ]
+    }
+  },
   "KMAT": {
     "card": {
       "name": "KMAT",
@@ -647,6 +711,161 @@
       },
       "sourced": "chgnet_screen_results.json (DFT-validated)",
       "note": "alloy screen BUILT; dpa/lifetime roadmap inside KMAT"
+    }
+  },
+  "KMIND": {
+    "card": {
+      "name": "KMIND",
+      "function": "FOUNDATION",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "SIM",
+      "retired_by": "a device-scale multi-task foundation model on real multi-diagnostic data",
+      "gates": [
+        "BR-L2-A1e",
+        "AC-16",
+        "AC-18",
+        "AC-20"
+      ],
+      "note": "whole-device foundation surrogate \u2014 one shared-trunk multi-task net across transport / equilibrium / state / disruption, trained jointly; reports shared-representation transfer honestly (incl. negative transfer)",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KMIND",
+      "live_foundation": {
+        "architecture": "per-domain adapter (->32) + shared trunk (2x128, dropout 0.1) + per-domain head; 4 domains, joint training 300 steps",
+        "domains": [
+          "transport",
+          "equil",
+          "state",
+          "disrupt"
+        ],
+        "params": 66958,
+        "transfer_vs_single_task": {
+          "transport": {
+            "metric": "r2_log_Qtot",
+            "multitask": 0.577,
+            "single_task_baseline": 0.571,
+            "delta": 0.006,
+            "transfer": "data_starved",
+            "n_train": 12,
+            "n_test": 4
+          },
+          "equil": {
+            "metric": "rel_l2_field",
+            "multitask": 0.009,
+            "single_task_baseline": 0.0117,
+            "delta": -0.0027,
+            "transfer": "positive",
+            "n_train": 600,
+            "n_test": 200
+          },
+          "state": {
+            "metric": "norm_rmse",
+            "multitask": 0.0239,
+            "single_task_baseline": 0.0224,
+            "delta": 0.0015,
+            "transfer": "neutral",
+            "n_train": 1500,
+            "n_test": 500
+          },
+          "disrupt": {
+            "metric": "roc_auc",
+            "multitask": 0.99,
+            "single_task_baseline": 0.993,
+            "delta": -0.003,
+            "transfer": "neutral",
+            "n_train": 443,
+            "n_test": 148
+          }
+        },
+        "positive_transfer_domains": [
+          "equil"
+        ],
+        "negative_transfer_domains": [],
+        "neutral_transfer_domains": [
+          "state",
+          "disrupt"
+        ],
+        "data_starved_domains": [
+          "transport"
+        ],
+        "mc_dropout_predict_ms": 4.05,
+        "backend": "CPU, torch, MC-dropout UQ",
+        "verdict": "One shared trunk across 4 fusion domains, benchmarked head-by-head against a MATCHED single-task baseline on the same split. On the well-populated domains the shared representation is positive ['equil'], negative none, neutral ['state', 'disrupt'] \u2014 no negative transfer. ['transport'] is data-starved (16 pts) and not judged held-out. Trained on real on-disk data (CGYRO map / analytic equilibria / twin sensor snapshots / MAST shots) \u2014 an honest multi-task result, not a blanket win."
+      },
+      "caveats": [
+        "transport has only ~16 points, so its head is data-starved and high-variance (a real limit, reported not hidden)",
+        "uncertainty is an MC-dropout epistemic proxy, not a calibrated conformal interval",
+        "equilibrium targets are the analytic Solov'ev family (as in KORE); state targets are the analytic-twin sensor snapshots (as in KFLOW)"
+      ]
+    }
+  },
+  "KMIT": {
+    "card": {
+      "name": "KMIT",
+      "function": "QMITIGATION",
+      "status": "BUILT",
+      "phase": 2,
+      "provenance": "SIM",
+      "retired_by": "fault-tolerant quantum hardware (not available this decade)",
+      "gates": [
+        "KX-L3"
+      ],
+      "note": "REAL quantum error mitigation \u2014 zero-noise extrapolation (ZNE, unitary folding) + readout-error mitigation on a real fusion quantum circuit (the KQUBIT H2 VQE state). Mitigation is the genuine NISQ tool TODAY; it recovers signal from noise, not a speedup. Quantum's role in fusion is post-~2036",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KMIT",
+      "live_error_mitigation": {
+        "problem": "mitigate a noisy H2 VQE expectation (the real KQUBIT circuit)",
+        "framework": "PennyLane default.mixed; ZNE via global unitary folding + linear extrapolation",
+        "zne": {
+          "exact_energy_Ha": -1.857275,
+          "ideal_noiseless_Ha": -1.857275,
+          "noisy_Ha": -1.812895,
+          "zne_mitigated_Ha": -1.852246,
+          "noise_scales_lambda": [
+            1.0,
+            3.0,
+            5.0
+          ],
+          "energies_vs_lambda": [
+            -1.812895,
+            -1.725694,
+            -1.648692
+          ],
+          "error_noisy_mHa": 44.38,
+          "error_zne_mHa": 5.029,
+          "error_reduction_frac": 0.887,
+          "depolarizing_p": 0.04,
+          "backend": {
+            "active_backend": "default",
+            "ran_on_real_hardware": false,
+            "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
+            "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
+          }
+        },
+        "readout_mitigation": {
+          "readout_bitflip_p": 0.08,
+          "tv_distance_noisy": 0.1472,
+          "tv_distance_mitigated": 0.0,
+          "tv_reduction_frac": 1.0,
+          "method": "inverse confusion-matrix (linear) readout correction"
+        },
+        "backend": {
+          "active_backend": "default",
+          "ran_on_real_hardware": false,
+          "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
+        },
+        "verdict": "REAL error mitigation on a fusion quantum circuit: ZNE cuts the noisy-energy error 44.38 -> 5.029 mHa (89% of the error removed) and inverse-confusion readout correction cuts the measurement TV distance 0.1472 -> 0.0 (100%). Mitigation is the REAL NISQ tool today \u2014 it recovers signal from noise. HONEST: it is NOT a speedup; quantum's meaningful role in fusion is post-~2036, and mitigation cost grows with noise. Runs on real hardware with KODEX_QC_BACKEND=ibm."
+      },
+      "caveats": [
+        "no quantum advantage \u2014 quantum's role in fusion is post-~2036",
+        "ZNE assumes a smooth noise->observable relation; it extrapolates, it does not eliminate noise, and its overhead grows as noise grows",
+        "readout mitigation uses a known confusion matrix; on hardware you must calibrate it"
+      ]
     }
   },
   "KOIL": {
@@ -701,7 +920,7 @@
       "live_learned_surrogate": {
         "rel_l2_vs_analytic": 0.0035,
         "ensemble_cov90": 0.778,
-        "infer_ms": 2.337,
+        "infer_ms": 0.318,
         "grid": "16x16",
         "n_heldout": 120
       },
@@ -768,7 +987,7 @@
       "gates": [
         "KX-L3"
       ],
-      "note": "REAL quantum-kernel classifier \u2014 embeds real MAST disruption features into a quantum feature map and classifies on the fidelity kernel (PennyLane); runs on a simulator now, real hardware pluggable. Honest: ties the classical kernel \u2014 a validated no-advantage result, but a real, runnable quantum-ML pipeline",
+      "note": "REAL quantum-kernel classifier \u2014 embeds real MAST disruption features into a quantum feature map and classifies on the fidelity kernel (PennyLane); runs on a simulator now, real hardware pluggable. Honest: ties the classical kernel \u2014 a validated no-advantage result, but a real, runnable quantum-ML pipeline; role in fusion post-~2036",
       "available": true
     },
     "benchmark": {
@@ -792,7 +1011,7 @@
           "active_backend": "default",
           "ran_on_real_hardware": false,
           "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
-          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
         },
         "verdict": "REAL quantum kernel classifies MAST disruptions at AUC 0.919 vs classical RBF 0.929 (Delta -0.010) \u2014 no advantage: a validated null, but a REAL runnable quantum-ML pipeline on real fusion data. Runs on hardware with KODEX_QC_BACKEND=ibm.",
         "caveats": [
@@ -817,7 +1036,7 @@
       "gates": [
         "KX-L3"
       ],
-      "note": "REAL QAOA quantum optimizer \u2014 solves a combinatorial design QUBO on an actual quantum circuit (PennyLane); runs on a simulator now, real hardware pluggable, and you can plug in your own QUBO. Honest: standard ~0.7-1.0 approx ratio, no speedup at this size (~8-10 yr to advantage)",
+      "note": "REAL QAOA quantum optimizer \u2014 solves a combinatorial design QUBO on an actual quantum circuit (PennyLane); runs on a simulator now, real hardware pluggable, and you can plug in your own QUBO. Honest: standard ~0.7-1.0 approx ratio, no speedup at this size (advantage post-~2036)",
       "available": true
     },
     "benchmark": {
@@ -842,7 +1061,7 @@
           "active_backend": "default",
           "ran_on_real_hardware": false,
           "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
-          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
         },
         "verdict": "REAL QAOA reaches 100% of the brute-force optimum (cut 6/6, p=2, 6 qubits) on the default backend \u2014 a working quantum optimizer, runnable on hardware with KODEX_QC_BACKEND=ibm. HONEST: no speedup vs classical at this size; advantage is ~8-10 yr out."
       },
@@ -864,7 +1083,7 @@
         "AC-43",
         "BR-SX-08"
       ],
-      "note": "REAL fault-tolerant resource estimator \u2014 computes the classical<->quantum crossover N, the surface-code physical-qubit overhead, and the logical-qubit roadmap year for a fusion electronic-structure kernel (order-of-magnitude, literature-scaled). Verdict: no FT advantage this decade \u2014 the machine does not exist yet",
+      "note": "REAL fault-tolerant resource estimator \u2014 computes the classical<->quantum crossover N, the surface-code physical-qubit overhead, and the logical-qubit roadmap year for a fusion electronic-structure kernel (order-of-magnitude, literature-scaled). Verdict: no FT advantage this decade \u2014 the machine does not exist yet; meaningful role post-~2036",
       "available": true
     },
     "benchmark": {
@@ -899,7 +1118,7 @@
         "AC-44",
         "KX-L3-A4"
       ],
-      "note": "REAL variational quantum eigensolver (VQE) for a molecular Hamiltonian \u2014 a runnable quantum program (PennyLane): executes on a simulator now and on real quantum hardware when you plug in a backend. Honest: no quantum advantage yet (~8-10 yr out); the tooling + testing are real TODAY",
+      "note": "REAL variational quantum eigensolver (VQE) for a molecular Hamiltonian \u2014 a runnable quantum program (PennyLane): executes on a simulator now and on real quantum hardware when you plug in a backend. Honest: no quantum advantage yet (~8-10 yr out); the tooling + testing are real TODAY \u2014 quantum's role in fusion is post-~2036",
       "available": true
     },
     "benchmark": {
@@ -926,7 +1145,7 @@
           "active_backend": "default",
           "ran_on_real_hardware": false,
           "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
-          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
         },
         "verdict": "REAL VQE recovers the H2 ground state to 0.0002 mHa on the default backend (within 1.6 mHa chemical accuracy). Runs on real quantum hardware when you set KODEX_QC_BACKEND=ibm. HONEST: no quantum advantage this decade \u2014 the value now is a real, testable quantum pipeline, not a speedup."
       },
@@ -966,6 +1185,198 @@
         "verdict": "Impurity-seeding radiation evaluator over 3 impurities at f_rad=0.58: 'Ar' gives the least core Zeff penalty (dZeff_hi=0.1102). Small scan \u2014 full impurity-transport (SOLPS) is the fidelity upgrade."
       },
       "caveat": "small seeding scan (few impurities); reduced 0-D radiation model"
+    }
+  },
+  "KSCOUT": {
+    "card": {
+      "name": "KSCOUT",
+      "function": "MF-CAMPAIGN",
+      "status": "BUILT",
+      "phase": 3,
+      "provenance": "SIM",
+      "retired_by": "the full multi-fidelity CGYRO campaign (twin + mu=400 + real-mass gold)",
+      "gates": [
+        "BR-L2-A1e"
+      ],
+      "note": "multi-fidelity Bayesian-optimization campaign manager \u2014 extends KSEEK: chooses which operating point AND which fidelity (reduced twin / mu=400 CGYRO / real-mass gold) to run next, greedily maximizing truth-weighted information per GPU-hour under a budget",
+      "available": true
+    },
+    "benchmark": {
+      "member": "KSCOUT",
+      "live_mf_campaign": {
+        "source": "KYRO GP over the completed 16-pt CGYRO A1e map",
+        "budget_gpu_h": 15.0,
+        "target_hotspots": 16,
+        "policy": "twin-triage every hotspot, escalate most-uncertain to mu=400, reserve gold",
+        "fidelities": {
+          "twin": {
+            "gpu_h": 0.0,
+            "rho": 0.55,
+            "desc": "reduced analytic twin (near-free triage)"
+          },
+          "cgyro_mu400": {
+            "gpu_h": 2.89,
+            "rho": 0.9,
+            "desc": "CGYRO representative mu=400 (measured GPU-h)"
+          },
+          "gold_mu3672": {
+            "gpu_h": 28.9,
+            "rho": 1.0,
+            "desc": "CGYRO real-mass gold (est. ~10x mu=400; not yet run)"
+          }
+        },
+        "multi_fidelity_plan": [
+          {
+            "a_LT": 3.25,
+            "shear": 1.4,
+            "fidelity": "cgyro_mu400",
+            "gpu_h": 2.99,
+            "gp_std": 0.5041,
+            "truth_confidence_rho": 0.9
+          },
+          {
+            "a_LT": 2.25,
+            "shear": 1.4,
+            "fidelity": "cgyro_mu400",
+            "gpu_h": 2.99,
+            "gp_std": 0.5041,
+            "truth_confidence_rho": 0.9
+          },
+          {
+            "a_LT": 3.25,
+            "shear": 0.6,
+            "fidelity": "cgyro_mu400",
+            "gpu_h": 2.99,
+            "gp_std": 0.5041,
+            "truth_confidence_rho": 0.9
+          },
+          {
+            "a_LT": 2.25,
+            "shear": 0.6,
+            "fidelity": "cgyro_mu400",
+            "gpu_h": 2.99,
+            "gp_std": 0.5041,
+            "truth_confidence_rho": 0.9
+          },
+          {
+            "a_LT": 3.25,
+            "shear": 1.0,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.4831,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.25,
+            "shear": 1.0,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.4831,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.75,
+            "shear": 0.6,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.4831,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.75,
+            "shear": 1.4,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.4831,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.75,
+            "shear": 1.0,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.4623,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.25,
+            "shear": 0.4,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.25,
+            "shear": 1.6,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 3.25,
+            "shear": 1.6,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 3.25,
+            "shear": 0.4,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.0,
+            "shear": 1.4,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 3.5,
+            "shear": 1.4,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          },
+          {
+            "a_LT": 2.0,
+            "shear": 0.6,
+            "fidelity": "twin",
+            "gpu_h": 0.1,
+            "gp_std": 0.3838,
+            "truth_confidence_rho": 0.55
+          }
+        ],
+        "mf_runs": 16,
+        "mf_gpu_h_used": 13.56,
+        "mf_runs_by_fidelity": {
+          "twin": 12,
+          "cgyro_mu400": 4,
+          "gold_mu3672": 0
+        },
+        "mf_mean_confidence_rho": 0.638,
+        "baseline_all_mu400": {
+          "n_runs": 5,
+          "gpu_h_used": 14.95,
+          "mean_confidence_rho": 0.281,
+          "unvisited_hotspots": 11
+        },
+        "mf_confidence_gain_x_vs_all_mu400": 2.27,
+        "verdict": "Under a tight 15.0 GPU-h budget across 16 uncertain operating points, the multi-fidelity policy triages ALL 16 with cheap twin runs and escalates 4 to mu=400 (0 to real-mass gold), reaching mean truth-confidence rho 0.638 \u2014 vs 0.281 for a naive all-mu=400 plan that exhausts the budget after 5 points and leaves 11 hotspots unexamined (2.27x). A real cost-aware campaign manager: look everywhere cheaply, spend the expensive fidelity where KYRO is least sure."
+      },
+      "caveats": [
+        "the per-fidelity rho (correlation-with-truth) values are ASSUMPTIONS \u2014 the real-mass gold has not been run \u2014 so this is a planning heuristic, not a measured speedup; the advantage holds only while budget < hotspots x mu=400 cost",
+        "GP std comes from only 16 points (directional, like KSEEK)",
+        "GPU-hours only; no compute-cost figures (product-econ rule)"
+      ]
     }
   },
   "KSEEK": {
@@ -1022,7 +1433,7 @@
       "gates": [
         "HX-29"
       ],
-      "note": "REAL quantum-metrology evaluation (PennyLane mixed-state) \u2014 GHZ interferometry: ideal gives Heisenberg (gain ~ N) scaling, but realistic dephasing (NV/SQUID/SERF reality) collapses it back to the standard quantum limit (~sqrt(N)). Honest null where fusion disruptions live",
+      "note": "REAL quantum-metrology evaluation (PennyLane mixed-state) \u2014 GHZ interferometry: ideal gives Heisenberg (gain ~ N) scaling, but realistic dephasing (NV/SQUID/SERF reality) collapses it back to the standard quantum limit (~sqrt(N)). Honest null where fusion disruptions live; quantum's role in fusion is post-~2036",
       "available": true
     },
     "benchmark": {
@@ -1091,7 +1502,7 @@
           "active_backend": "default",
           "ran_on_real_hardware": false,
           "how_to_use_real_qc": "set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum token> to run this exact circuit on real quantum hardware",
-          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; this tooling makes the TESTING real and runnable TODAY, same code path"
+          "honest_timeline": "fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out \u2014 a meaningful role in fusion only after ~2036; this tooling makes the TESTING real and runnable TODAY, same code path"
         },
         "verdict": "REAL quantum-metrology computation: over N=2->8 the ideal GHZ gain grows 4.0x (Heisenberg ~ N), but with per-qubit dephasing (p=0.2) the dephased GHZ grows only 2.05x \u2014 essentially the SQL rate (2.01x, ~sqrt(N)). Dephasing ERASES the Heisenberg *scaling* to a bounded constant (gain turns over near N~9). HONEST NULL: no quantum-sensing advantage for fusion disruptions this decade \u2014 but a real, runnable metrology tool."
       },
@@ -1112,7 +1523,7 @@
       "gates": [
         "KX-L3"
       ],
-      "note": "tensor-network / low-rank ROM compression of the real CGYRO A1e flux database (classical MPS-style SVD; a many-body method and bridge to quantum kernels \u2014 NO quantum-advantage claim)",
+      "note": "tensor-network / low-rank ROM compression of the real CGYRO A1e flux database (classical MPS-style SVD; a many-body method and bridge to quantum kernels \u2014 NO quantum-advantage claim; quantum's role in fusion is post-~2036)",
       "available": true
     },
     "benchmark": {
@@ -1263,9 +1674,9 @@
         "map": "12 turbulent / 4 quiet (16/16 complete)"
       },
       "speed": {
-        "surrogate_ms_per_point": 0.329,
+        "surrogate_ms_per_point": 0.257,
         "cgyro_gpu_h_per_point_measured": 2.89,
-        "speedup_x_vs_cgyro": "3.2e+07",
+        "speedup_x_vs_cgyro": "4.1e+07",
         "speedup_note": "ms inference vs GPU-hours for the CONVERGED flux value",
         "fidelity": "representative mu=400; real-mass gold deferred"
       },

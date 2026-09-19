@@ -62,6 +62,7 @@ def backend_note() -> dict:
         "ran_on_real_hardware": real,
         "how_to_use_real_qc": ("set KODEX_QC_BACKEND=ibm and KODEX_QC_TOKEN=<your IBM Quantum "
                                "token> to run this exact circuit on real quantum hardware"),
-        "honest_timeline": ("fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out; "
-                            "this tooling makes the TESTING real and runnable TODAY, same code path"),
+        "honest_timeline": ("fault-tolerant quantum ADVANTAGE for fusion kernels is ~8-10 yr out — a "
+                            "meaningful role in fusion only after ~2036; this tooling makes the TESTING "
+                            "real and runnable TODAY, same code path"),
     }

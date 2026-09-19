@@ -94,6 +94,10 @@ tensor-network / low-rank (MPS-style SVD) ROM of the real CGYRO A1e flux databas
 **REAL quantum kernel** (PennyLane) — embeds real MAST disruption features into a quantum feature map and classifies on the fidelity kernel; runs on a simulator now, real QC hardware pluggable. MAST-disruption AUC **0.919** vs classical RBF 0.929 (ties — a validated null); a real, runnable quantum-ML pipeline on real fusion data.
 *provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
 
+### KMIT — QMITIGATION  `[BUILT]`  ✦v0.3
+**REAL quantum error mitigation** — zero-noise extrapolation (ZNE, global unitary folding) + inverse-confusion readout-error mitigation applied to the real KQUBIT H₂ VQE circuit (PennyLane default.mixed; sim now, real hardware pluggable). ZNE removes ~89% of the noise-induced energy error (44.4 → 5.0 mHa); readout mitigation cuts the measurement TV distance to ~0. Mitigation is the genuine NISQ tool TODAY — it recovers signal from noise, not a speedup. Honest: quantum's meaningful role in fusion is post-~2036.
+*provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
+
 ## Phase 3 — cutting-edge + capstones
 
 ### KDRIVE — RL-control  `[BUILT]`
@@ -147,4 +151,16 @@ active-learning acquisition — proposes the next most-informative CGYRO run fro
 ### KBENCH — BENCHMARK  `[BUILT]`  ✦v0.2
 open, citable fusion-ML benchmark suite — 3 tasks (CGYRO turbulence, MAST disruption, flux ROM) with real on-disk data, fixed reproducible splits, metrics, and KODEX baselines to beat. A community leaderboard starting point, not a private result; honest that it's small by mainstream-ML standards (pilot fusion-ML benchmarks).
 *provenance n/a · retired_by **community-standard fusion-ML benchmarks**.*
+
+### KMIND — FOUNDATION  `[BUILT]`  ✦v0.3
+**whole-device foundation surrogate** — ONE shared-trunk multi-task neural net (per-domain input adapters → a shared plasma-state trunk → per-domain heads, ~67k params) trained JOINTLY across transport (KYRO), equilibrium (KORE), state (KFLOW) and disruption (KWARD) on the data those specialists use. Benchmarked head-by-head against a MATCHED single-task baseline on the same split: on the well-populated domains the shared representation shows **no negative transfer** (equilibrium slight positive, state/disruption neutral); transport is **data-starved (16 pts) and reported, not hidden**. MC-dropout uncertainty; per-domain trust gate (physical box for transport/equil, Mahalanobis for state/disrupt). The honest question a foundation model must answer — does one shared representation help or hurt each task? — answered with matched baselines.
+*provenance SIM · retired_by **a device-scale multi-task foundation model on real multi-diagnostic data** · gates BR-L2-A1e, AC-16, AC-18, AC-20.*
+
+### KLINQ — QLINSOLVE  `[BUILT]`  ✦v0.3
+**REAL quantum linear solver** — a variational quantum linear solver (VQLS) prepares the solution of a 4×4 reduced-MHD (discrete-Laplacian, SPD) linear system with a real quantum circuit (PennyLane; sim now, hardware pluggable), recovering the classical solution at fidelity ~1.0. Bundled with an honest fault-tolerant HHL resource estimate: a fusion-scale (N~1e6) sparse solve needs ~4e4 physical qubits — no advantage at real scale. Honest: quantum's meaningful role in fusion is post-~2036.
+*provenance SIM · retired_by **fault-tolerant quantum hardware (not available this decade)** · gates KX-L3.*
+
+### KSCOUT — MF-CAMPAIGN  `[BUILT]`  ✦v0.3
+**multi-fidelity Bayesian-optimization campaign manager** — extends KSEEK from a single next-point to a budget-constrained campaign that chooses which operating point AND which fidelity (reduced twin / μ=400 CGYRO / real-mass gold) to run next. Triage-then-escalate: cheap twin on every uncertain hotspot, escalate the most-uncertain to μ=400, reserve real-mass gold. Under a tight GPU-hour budget it reaches ~2.3× the mean truth-confidence of a naive all-μ=400 plan (which exhausts the budget and leaves most hotspots unexamined). Honest: fidelity correlations are assumptions (gold not yet run); GPU-hours only, no cost figures.
+*provenance SIM · retired_by **the full multi-fidelity CGYRO campaign (twin + μ=400 + real-mass gold)** · gates BR-L2-A1e.*
 

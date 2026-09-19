@@ -27,7 +27,7 @@ class KQUBIT(Surrogate):
     note = ("REAL variational quantum eigensolver (VQE) for a molecular Hamiltonian — a "
             "runnable quantum program (PennyLane): executes on a simulator now and on real "
             "quantum hardware when you plug in a backend. Honest: no quantum advantage yet "
-            "(~8-10 yr out); the tooling + testing are real TODAY")
+            "(~8-10 yr out); the tooling + testing are real TODAY — quantum's role in fusion is post-~2036")
 
     # H2 molecular Hamiltonian, 2-qubit parity-reduced (standard Qiskit/IBM textbook coeffs, Ha)
     _COEFFS = (-1.052373245772859, 0.39793742484318045, -0.39793742484318045,
@@ -137,7 +137,7 @@ class KQROSS(Surrogate):
     note = ("REAL fault-tolerant resource estimator — computes the classical<->quantum crossover N, "
             "the surface-code physical-qubit overhead, and the logical-qubit roadmap year for a fusion "
             "electronic-structure kernel (order-of-magnitude, literature-scaled). Verdict: no FT "
-            "advantage this decade — the machine does not exist yet")
+            "advantage this decade — the machine does not exist yet; meaningful role post-~2036")
 
     # order-of-magnitude scaling model (literature-scaled; illustrative, honestly labelled)
     _D = 25                                # surface-code distance
@@ -207,7 +207,7 @@ class KSENSE(Surrogate):
     note = ("REAL quantum-metrology evaluation (PennyLane mixed-state) — GHZ interferometry: ideal "
             "gives Heisenberg (gain ~ N) scaling, but realistic dephasing (NV/SQUID/SERF reality) "
             "collapses it back to the standard quantum limit (~sqrt(N)). Honest null where fusion "
-            "disruptions live")
+            "disruptions live; quantum's role in fusion is post-~2036")
 
     _P = 0.2                                  # per-qubit dephasing (realistic sensor decoherence)
 
@@ -284,7 +284,7 @@ class KTENSOR(Surrogate):
     gates = ("KX-L3",)
     note = ("tensor-network / low-rank ROM compression of the real CGYRO A1e flux "
             "database (classical MPS-style SVD; a many-body method and bridge to "
-            "quantum kernels — NO quantum-advantage claim)")
+            "quantum kernels — NO quantum-advantage claim; quantum's role in fusion is post-~2036)")
 
     _COLS = ("a_LT", "shear", "Q_i", "Q_e")   # operating grid + saturated fluxes
 
@@ -395,7 +395,7 @@ class KQERN(Surrogate):
     note = ("REAL quantum-kernel classifier — embeds real MAST disruption features into a "
             "quantum feature map and classifies on the fidelity kernel (PennyLane); runs on a "
             "simulator now, real hardware pluggable. Honest: ties the classical kernel — a "
-            "validated no-advantage result, but a real, runnable quantum-ML pipeline")
+            "validated no-advantage result, but a real, runnable quantum-ML pipeline; role in fusion post-~2036")
 
     _N = 64
     _FEATS = (0, 6, 7, 8)          # ip_mean, beta_n, li, q95 (subset of KWARD's real features)
@@ -490,7 +490,7 @@ class KQOPT(Surrogate):
     note = ("REAL QAOA quantum optimizer — solves a combinatorial design QUBO on an actual "
             "quantum circuit (PennyLane); runs on a simulator now, real hardware pluggable, and "
             "you can plug in your own QUBO. Honest: standard ~0.7-1.0 approx ratio, no speedup "
-            "at this size (~8-10 yr to advantage)")
+            "at this size (advantage post-~2036)")
 
     # a fixed 6-node design QUBO (illustrative MaxCut-style configuration problem)
     _EDGES = ((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 0), (0, 2), (3, 5))
@@ -586,7 +586,8 @@ class KDYN(Surrogate):
     gates = ("KX-L3",)
     note = ("REAL quantum dynamics — Trotterized time-evolution of a transverse-field Ising "
             "'kinetic' Hamiltonian (PennyLane); the honest 1/n_steps cost curve for simulating "
-            "plasma-like dynamics on a quantum computer. Runs on a simulator now, hardware pluggable")
+            "plasma-like dynamics on a quantum computer. Runs on a simulator now, hardware pluggable; "
+            "quantum's role in fusion is post-~2036")
 
     _NQ = 3; _J = 1.0; _HX = 0.8; _T = 1.0
 

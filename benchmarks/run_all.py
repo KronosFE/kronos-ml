@@ -181,6 +181,31 @@ def _headline(name, b):
         r = b.get("live_impurity_seeding", {})
         return (f"impurity-seeding radiation evaluator: {r.get('n_impurities')} impurities "
                 f"({', '.join(r.get('impurities', []))}); least core dilution = {r.get('least_core_dilution_impurity')}")
+    if name == "KMIND":
+        lf = b.get("live_foundation", {})
+        pos = lf.get("positive_transfer_domains", []); neg = lf.get("negative_transfer_domains", [])
+        neu = lf.get("neutral_transfer_domains", []); st = lf.get("data_starved_domains", [])
+        return (f"**foundation model**: one shared trunk across {len(lf.get('domains', []))} domains "
+                f"({lf.get('params', '?')} params); transfer vs matched single-task — pos {pos or 'none'}, "
+                f"neg {neg or 'none'}, neutral {neu or 'none'}"
+                + (" (transport data-starved)" if st else "") + " — honest multi-task result")
+    if name == "KMIT":
+        m = b.get("live_error_mitigation", {}); z = m.get("zne", {}); ro = m.get("readout_mitigation", {})
+        return (f"**REAL error mitigation**: ZNE cuts H2 energy error {z.get('error_noisy_mHa')}→"
+                f"{z.get('error_zne_mHa')} mHa ({z.get('error_reduction_frac')} removed); readout TV "
+                f"{ro.get('tv_distance_noisy')}→{ro.get('tv_distance_mitigated')} — real NISQ tool today, "
+                f"role post-~2036")
+    if name == "KLINQ":
+        q = b.get("live_quantum_linear_solver", {}); hhl = q.get("ft_hhl_resource_estimate", {})
+        return (f"**REAL quantum linear solver** (VQLS): 4×4 reduced-MHD solve fidelity "
+                f"{q.get('solution_fidelity_vs_classical')} vs classical (rel-resid {q.get('residual_rel')}); "
+                f"FT-HHL {hhl.get('physical_qubits_needed')} phys qubits — no advantage, role post-~2036")
+    if name == "KSCOUT":
+        c = b.get("live_mf_campaign", {}); base = c.get("baseline_all_mu400", {})
+        return (f"**multi-fidelity campaign**: tight {c.get('budget_gpu_h')} GPU-h over "
+                f"{c.get('target_hotspots')} hotspots → mean confidence ρ {c.get('mf_mean_confidence_rho')} "
+                f"vs {base.get('mean_confidence_rho')} all-μ=400 "
+                f"({c.get('mf_confidence_gain_x_vs_all_mu400')}×); triage-then-escalate")
     return b.get("note", b.get("headline", "roadmap"))
 
 
