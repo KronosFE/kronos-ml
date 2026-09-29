@@ -1,9 +1,9 @@
 {
-  "title": "KODEX: the Kronos Family of Codes (AI/ML fusion surrogate suite) v0.1.0",
+  "title": "KODEX: the Kronos Family of Codes (AI/ML fusion surrogate suite) v0.3.0",
   "upload_type": "software",
   "language": "eng",
-  "version": "0.1.0",
-  "publication_date": "2026-09-10",
+  "version": "0.3.0",
+  "publication_date": "2026-09-29",
   "creators": [
     {
       "name": "Ford, P. I.",
@@ -193,5 +193,5 @@
     }
   ],
   "notes": "Draft-first deposit. Provenance chain: code -> benchmark -> on-disk data -> CGYRO/register/AI+Quantum DOI. See PROVENANCE.md and MANIFEST.sha256.",
-  "description": "<p><strong>KODEX &mdash; the Kronos Family of Codes.</strong> A benchmarked suite of AI/ML surrogate models that stand in for expensive fusion physics (CGYRO-class gyrokinetics, neutronics, equilibrium, control) with calibrated uncertainty and an abstention gate. One contract across the fleet: <code>predict(x) &rarr; (y, uncertainty, in_domain)</code>. Built on and tracing to the Kronos research corpus.</p><p>This release publishes the <strong>26 BUILT</strong> codes (package + real benchmark + docs). 4 further codes ship as honest ROADMAP: KEDGE, KHEAT, KRAD, KTENSOR.</p><p>Honest cards are kept intact: CGYRO-anchored surrogates use the mu=400 representative-mass turbulence map; the quantum members (KQUBIT/KQROSS/KSENSE) report validated null/negative results (no quantum advantage claimed); KWARD's disruption labels are heuristic (Ip current-quench, not physicist-verified) and its headline independent-precursor AUC (0.975) uses only n=1 Mirnov + P_rad; KECON is a generic-LCOE financial firewall carrying no Kronos economic numbers.</p><p>Documentation: <a href=\"https://kronosfusionenergy.com/kodex\">https://kronosfusionenergy.com/kodex</a> &middot; source: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>.</p>"
+  "description": "<p><strong>KODEX &mdash; the Kronos Family of Codes.</strong> A benchmarked suite of AI/ML surrogate models that stand in for expensive fusion physics (CGYRO-class gyrokinetics, neutronics, equilibrium, control) with calibrated uncertainty and an abstention gate. One contract across the fleet: <code>predict(x) &rarr; (y, uncertainty, in_domain)</code>. Built on and tracing to the Kronos research corpus.</p><p>This release publishes the full <strong>39 BUILT</strong> codes (package + real benchmark + docs), including the v0.3.0 additions KMIND (whole-device foundation surrogate), KSCOUT (multi-fidelity campaign manager), and the quantum members KMIT (error mitigation) and KLINQ (linear solver).</p><p>Honest cards are kept intact: CGYRO-anchored surrogates use the mu=400 representative-mass turbulence map; the quantum members (KQUBIT/KQROSS/KSENSE) report validated null/negative results (no quantum advantage claimed); KWARD's disruption labels are heuristic (Ip current-quench, not physicist-verified) and its headline independent-precursor AUC (0.975) uses only n=1 Mirnov + P_rad; KECON is a generic-LCOE financial firewall carrying no Kronos economic numbers; the newer quantum members (KMIT, KLINQ) are real NISQ-era tools with no claimed advantage &mdash; quantum's meaningful role in fusion is post-~2036.</p><p>Documentation: <a href=\"https://kronosfusionenergy.com/kodex\">https://kronosfusionenergy.com/kodex</a> &middot; source: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>.</p>"
 }

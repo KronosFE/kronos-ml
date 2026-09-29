@@ -154,5 +154,83 @@
     "edit_url": "https://zenodo.org/deposit/22694348",
     "published": true,
     "doi": "10.5281/zenodo.22694348"
+  },
+  "KBENCH": {
+    "id": 22713389,
+    "edit_url": "https://zenodo.org/deposit/22713389",
+    "published": true,
+    "doi": "10.5281/zenodo.22713389"
+  },
+  "KDYN": {
+    "id": 22713391,
+    "edit_url": "https://zenodo.org/deposit/22713391",
+    "published": true,
+    "doi": "10.5281/zenodo.22713391"
+  },
+  "KEDGE": {
+    "id": 22713393,
+    "edit_url": "https://zenodo.org/deposit/22713393",
+    "published": true,
+    "doi": "10.5281/zenodo.22713393"
+  },
+  "KHEAT": {
+    "id": 22713395,
+    "edit_url": "https://zenodo.org/deposit/22713395",
+    "published": true,
+    "doi": "10.5281/zenodo.22713395"
+  },
+  "KQERN": {
+    "id": 22713397,
+    "edit_url": "https://zenodo.org/deposit/22713397",
+    "published": true,
+    "doi": "10.5281/zenodo.22713397"
+  },
+  "KQOPT": {
+    "id": 22713399,
+    "edit_url": "https://zenodo.org/deposit/22713399",
+    "published": true,
+    "doi": "10.5281/zenodo.22713399"
+  },
+  "KRAD": {
+    "id": 22713401,
+    "edit_url": "https://zenodo.org/deposit/22713401",
+    "published": true,
+    "doi": "10.5281/zenodo.22713401"
+  },
+  "KSEEK": {
+    "id": 22713403,
+    "edit_url": "https://zenodo.org/deposit/22713403",
+    "published": true,
+    "doi": "10.5281/zenodo.22713403"
+  },
+  "KTENSOR": {
+    "id": 22713405,
+    "edit_url": "https://zenodo.org/deposit/22713405",
+    "published": true,
+    "doi": "10.5281/zenodo.22713405"
+  },
+  "KLINQ": {
+    "id": 23041149,
+    "edit_url": "https://zenodo.org/deposit/23041149",
+    "published": true,
+    "doi": "10.5281/zenodo.23041149"
+  },
+  "KMIND": {
+    "id": 23041151,
+    "edit_url": "https://zenodo.org/deposit/23041151",
+    "published": true,
+    "doi": "10.5281/zenodo.23041151"
+  },
+  "KMIT": {
+    "id": 23041153,
+    "edit_url": "https://zenodo.org/deposit/23041153",
+    "published": true,
+    "doi": "10.5281/zenodo.23041153"
+  },
+  "KSCOUT": {
+    "id": 23041155,
+    "edit_url": "https://zenodo.org/deposit/23041155",
+    "published": true,
+    "doi": "10.5281/zenodo.23041155"
   }
 }

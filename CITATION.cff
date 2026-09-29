@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use KODEX, please cite it as below."
 title: "KODEX: the Kronos Family of Codes (AI/ML fusion surrogate suite)"
-version: "0.1.0"
-date-released: "2026-09-10"
+version: "0.3.0"
+date-released: "2026-09-29"
 license: Apache-2.0
 repository-code: "https://github.com/KronosFE/kronos-ml"
 url: "https://kronosfusionenergy.com/kodex"

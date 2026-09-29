@@ -1,0 +1,70 @@
+{
+  "member": "KMIND",
+  "live_foundation": {
+    "architecture": "per-domain adapter (->32) + shared trunk (2x128, dropout 0.1) + per-domain head; 4 domains, joint training 300 steps",
+    "domains": [
+      "transport",
+      "equil",
+      "state",
+      "disrupt"
+    ],
+    "params": 66958,
+    "transfer_vs_single_task": {
+      "transport": {
+        "metric": "r2_log_Qtot",
+        "multitask": -0.299,
+        "single_task_baseline": -1.876,
+        "delta": 1.577,
+        "transfer": "data_starved",
+        "n_train": 12,
+        "n_test": 4
+      },
+      "equil": {
+        "metric": "rel_l2_field",
+        "multitask": 0.0108,
+        "single_task_baseline": 0.0066,
+        "delta": 0.0042,
+        "transfer": "negative",
+        "n_train": 600,
+        "n_test": 200
+      },
+      "state": {
+        "metric": "norm_rmse",
+        "multitask": 0.0246,
+        "single_task_baseline": 0.0224,
+        "delta": 0.0022,
+        "transfer": "negative",
+        "n_train": 1500,
+        "n_test": 500
+      },
+      "disrupt": {
+        "metric": "roc_auc",
+        "multitask": 0.997,
+        "single_task_baseline": 0.995,
+        "delta": 0.002,
+        "transfer": "neutral",
+        "n_train": 443,
+        "n_test": 148
+      }
+    },
+    "positive_transfer_domains": [],
+    "negative_transfer_domains": [
+      "equil",
+      "state"
+    ],
+    "neutral_transfer_domains": [
+      "disrupt"
+    ],
+    "data_starved_domains": [
+      "transport"
+    ],
+    "mc_dropout_predict_ms": 4.05,
+    "backend": "CPU, torch, MC-dropout UQ",
+    "verdict": "One shared trunk across 4 fusion domains, benchmarked head-by-head against a MATCHED single-task baseline on the same split. On the well-populated domains the shared representation is positive none, negative ['equil', 'state'], neutral ['disrupt'] \u2014 some negative transfer. ['transport'] is data-starved (16 pts) and not judged held-out. Trained on real on-disk data (CGYRO map / analytic equilibria / twin sensor snapshots / MAST shots) \u2014 an honest multi-task result, not a blanket win."
+  },
+  "caveats": [
+    "transport has only ~16 points, so its head is data-starved and high-variance (a real limit, reported not hidden)",
+    "uncertainty is an MC-dropout epistemic proxy, not a calibrated conformal interval",
+    "equilibrium targets are the analytic Solov'ev family (as in KORE); state targets are the analytic-twin sensor snapshots (as in KFLOW)"
+  ]
+}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kronos-fusion-ml"
-version = "0.2.0"
+version = "0.3.0"
 description = "KODEX — the Kronos Family of Codes: a benchmarked AI/ML surrogate suite for fusion, with calibrated uncertainty and an abstention gate on every model."
 readme = "README.md"
 requires-python = ">=3.10"

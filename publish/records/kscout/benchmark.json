@@ -1,0 +1,177 @@
+{
+  "member": "KSCOUT",
+  "live_mf_campaign": {
+    "source": "KYRO GP over the completed 16-pt CGYRO A1e map",
+    "budget_gpu_h": 15.0,
+    "target_hotspots": 16,
+    "policy": "twin-triage every hotspot, escalate most-uncertain to mu=400, reserve gold",
+    "fidelities": {
+      "twin": {
+        "gpu_h": 0.0,
+        "rho": 0.55,
+        "desc": "reduced analytic twin (near-free triage)"
+      },
+      "cgyro_mu400": {
+        "gpu_h": 2.89,
+        "rho": 0.9,
+        "desc": "CGYRO representative mu=400 (measured GPU-h)"
+      },
+      "gold_mu3672": {
+        "gpu_h": 28.9,
+        "rho": 1.0,
+        "desc": "CGYRO real-mass gold (est. ~10x mu=400; not yet run)"
+      }
+    },
+    "multi_fidelity_plan": [
+      {
+        "a_LT": 2.25,
+        "shear": 0.6,
+        "fidelity": "cgyro_mu400",
+        "gpu_h": 2.99,
+        "gp_std": 0.5041,
+        "truth_confidence_rho": 0.9
+      },
+      {
+        "a_LT": 3.25,
+        "shear": 0.6,
+        "fidelity": "cgyro_mu400",
+        "gpu_h": 2.99,
+        "gp_std": 0.5041,
+        "truth_confidence_rho": 0.9
+      },
+      {
+        "a_LT": 2.25,
+        "shear": 1.4,
+        "fidelity": "cgyro_mu400",
+        "gpu_h": 2.99,
+        "gp_std": 0.5041,
+        "truth_confidence_rho": 0.9
+      },
+      {
+        "a_LT": 3.25,
+        "shear": 1.4,
+        "fidelity": "cgyro_mu400",
+        "gpu_h": 2.99,
+        "gp_std": 0.5041,
+        "truth_confidence_rho": 0.9
+      },
+      {
+        "a_LT": 3.25,
+        "shear": 1.0,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.4831,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.25,
+        "shear": 1.0,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.4831,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.75,
+        "shear": 0.6,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.4831,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.75,
+        "shear": 1.4,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.4831,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.75,
+        "shear": 1.0,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.4623,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 3.25,
+        "shear": 1.6,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.25,
+        "shear": 1.6,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.25,
+        "shear": 0.4,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 3.25,
+        "shear": 0.4,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 2.0,
+        "shear": 1.4,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 3.5,
+        "shear": 1.4,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      },
+      {
+        "a_LT": 3.5,
+        "shear": 0.6,
+        "fidelity": "twin",
+        "gpu_h": 0.1,
+        "gp_std": 0.3838,
+        "truth_confidence_rho": 0.55
+      }
+    ],
+    "mf_runs": 16,
+    "mf_gpu_h_used": 13.56,
+    "mf_runs_by_fidelity": {
+      "twin": 12,
+      "cgyro_mu400": 4,
+      "gold_mu3672": 0
+    },
+    "mf_mean_confidence_rho": 0.638,
+    "baseline_all_mu400": {
+      "n_runs": 5,
+      "gpu_h_used": 14.95,
+      "mean_confidence_rho": 0.281,
+      "unvisited_hotspots": 11
+    },
+    "mf_confidence_gain_x_vs_all_mu400": 2.27,
+    "verdict": "Under a tight 15.0 GPU-h budget across 16 uncertain operating points, the multi-fidelity policy triages ALL 16 with cheap twin runs and escalates 4 to mu=400 (0 to real-mass gold), reaching mean truth-confidence rho 0.638 \u2014 vs 0.281 for a naive all-mu=400 plan that exhausts the budget after 5 points and leaves 11 hotspots unexamined (2.27x). A real cost-aware campaign manager: look everywhere cheaply, spend the expensive fidelity where KYRO is least sure."
+  },
+  "caveats": [
+    "the per-fidelity rho (correlation-with-truth) values are ASSUMPTIONS \u2014 the real-mass gold has not been run \u2014 so this is a planning heuristic, not a measured speedup; the advantage holds only while budget < hotspots x mu=400 cost",
+    "GP std comes from only 16 points (directional, like KSEEK)",
+    "GPU-hours only; no compute-cost figures (product-econ rule)"
+  ]
+}

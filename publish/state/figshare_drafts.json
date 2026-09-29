@@ -180,5 +180,96 @@
     "done": true,
     "published": true,
     "public_url": "https://doi.org/10.6084/m9.figshare.33559582"
+  },
+  "KBENCH": {
+    "id": 33634261,
+    "url": "https://figshare.com/account/articles/33634261",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634261"
+  },
+  "KDYN": {
+    "id": 33634270,
+    "url": "https://figshare.com/account/articles/33634270",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634270"
+  },
+  "KEDGE": {
+    "id": 33634282,
+    "url": "https://figshare.com/account/articles/33634282",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634282"
+  },
+  "KHEAT": {
+    "id": 33634294,
+    "url": "https://figshare.com/account/articles/33634294",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634294"
+  },
+  "KQERN": {
+    "id": 33634306,
+    "url": "https://figshare.com/account/articles/33634306",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634306"
+  },
+  "KQOPT": {
+    "id": 33634318,
+    "url": "https://figshare.com/account/articles/33634318",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634318"
+  },
+  "KRAD": {
+    "id": 33634330,
+    "url": "https://figshare.com/account/articles/33634330",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634330"
+  },
+  "KSEEK": {
+    "id": 33634342,
+    "url": "https://figshare.com/account/articles/33634342",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634342"
+  },
+  "KTENSOR": {
+    "id": 33634351,
+    "url": "https://figshare.com/account/articles/33634351",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/33634351"
+  },
+  "KLINQ": {
+    "id": 34024851,
+    "url": "https://figshare.com/account/articles/34024851",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/34024851"
+  },
+  "KMIND": {
+    "id": 34024854,
+    "url": "https://figshare.com/account/articles/34024854",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/34024854"
+  },
+  "KMIT": {
+    "id": 34024860,
+    "url": "https://figshare.com/account/articles/34024860",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/34024860"
+  },
+  "KSCOUT": {
+    "id": 34024863,
+    "url": "https://figshare.com/account/articles/34024863",
+    "done": true,
+    "published": true,
+    "public_url": "https://api.figshare.com/v2/articles/34024863"
   }
 }

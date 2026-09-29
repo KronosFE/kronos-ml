@@ -1,0 +1,65 @@
+{
+  "kname": "KMIND",
+  "page": "https://kronosfusionenergy.com/kodex/kmind",
+  "title": "KODEX \u2014 KMIND: FOUNDATION",
+  "version": "0.2.0",
+  "publication_date": "2026-09-29",
+  "language": "eng",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Ford, P. I.",
+      "orcid": "0000-0003-0395-1752",
+      "affiliation": "Kronos Fusion Energy"
+    }
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "keywords": [
+    "fusion energy",
+    "spherical tokamak",
+    "D-3He",
+    "AI/ML surrogate model",
+    "uncertainty quantification",
+    "digital twin",
+    "Kronos Fusion Energy",
+    "FOUNDATION",
+    "KODEX:KMIND"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://kronosfusionenergy.com/kodex/kmind",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isPartOf",
+      "identifier": "https://kronosfusionenergy.com/kodex",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/KronosFE/kronos-ml",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.22645689",
+      "resource_type": "publication"
+    },
+    {
+      "relation": "isCompiledBy",
+      "identifier": "https://github.com/KronosFE/kronos-toolkit",
+      "resource_type": "software"
+    },
+    {
+      "relation": "references",
+      "identifier": "10.5281/zenodo.21842371",
+      "resource_type": "dataset"
+    }
+  ],
+  "description": "<p><strong>KODEX &mdash; KMIND</strong> (FOUNDATION). whole-device foundation surrogate \u2014 one shared-trunk multi-task net across transport / equilibrium / state / disruption, trained jointly; reports shared-representation transfer honestly (incl. negative transfer)</p><p><strong>Benchmark:</strong> **foundation model**: one shared trunk across 4 domains (66958 params); transfer vs matched single-task \u2014 pos none, neg ['equil', 'state'], neutral ['disrupt'] (transport data-starved) \u2014 honest multi-task result</p><p>Part of KODEX, the Kronos Family of Codes &mdash; a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (<code>predict(x) &rarr; (y, uncertainty, in_domain)</code>). Provenance: references 10.5281/zenodo.21842371. Home: <a href=\"https://kronosfusionenergy.com/kodex/kmind\">https://kronosfusionenergy.com/kodex/kmind</a> &middot; suite: <a href=\"https://github.com/KronosFE/kronos-ml\">https://github.com/KronosFE/kronos-ml</a>. Licensed under Apache-2.0. Honest card preserved verbatim.</p>",
+  "description_plain": "KODEX \u2014 KMIND (FOUNDATION). whole-device foundation surrogate \u2014 one shared-trunk multi-task net across transport / equilibrium / state / disruption, trained jointly; reports shared-representation transfer honestly (incl. negative transfer)Benchmark: **foundation model**: one shared trunk across 4 domains (66958 params); transfer vs matched single-task \u2014 pos none, neg ['equil', 'state'], neutral ['disrupt'] (transport data-starved) \u2014 honest multi-task resultPart of KODEX, the Kronos Family of Codes \u2014 a benchmarked AI/ML fusion surrogate suite with calibrated uncertainty and an abstention gate (predict(x) \u2192 (y, uncertainty, in_domain)). Provenance: references 10.5281/zenodo.21842371. Home: https://kronosfusionenergy.com/kodex/kmind \u00b7 suite: https://github.com/KronosFE/kronos-ml. Licensed under Apache-2.0. Honest card preserved verbatim.",
+  "notes": "Draft-first per-code deposit. Full package: https://github.com/KronosFE/kronos-ml. Provenance chain in card.md + MANIFEST.sha256."
+}
