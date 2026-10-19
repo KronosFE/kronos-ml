@@ -1,5 +1,10 @@
 # KODEX — the Kronos Family of Codes
 
+[![PyPI](https://img.shields.io/pypi/v/kronos-fusion-ml?color=blue)](https://pypi.org/project/kronos-fusion-ml/)
+[![Downloads](https://img.shields.io/pypi/dm/kronos-fusion-ml?color=blue)](https://pypi.org/project/kronos-fusion-ml/)
+[![Python](https://img.shields.io/pypi/pyversions/kronos-fusion-ml)](https://pypi.org/project/kronos-fusion-ml/)
+[![License](https://img.shields.io/github/license/KronosFE/kronos-ml?color=blue)](LICENSE)
+
 A benchmarked AI/ML surrogate suite for fusion. Fast, calibrated stand-ins for
 expensive physics — **every code knows when it is out of its depth.**
 
