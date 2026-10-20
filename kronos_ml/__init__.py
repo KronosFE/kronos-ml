@@ -8,7 +8,7 @@ only when a surrogate actually runs.
 """
 from __future__ import annotations
 
-__version__ = "0.2.0"
+__version__ = "0.3.1"
 
 from .base import Surrogate, Prediction  # noqa: E402
 
