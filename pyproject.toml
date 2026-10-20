@@ -27,7 +27,9 @@ nn = ["torch>=2"]                     # neural members (KFLOW GNN, KORE FNO retr
 ml = ["scikit-learn>=1.1"]            # GP + ensemble heads (KHALO, KYRO, KWARD)
 data = ["pandas>=1.3", "pyarrow"]     # on-disk result loaders
 plot = ["matplotlib>=3.4"]
+quantum = ["pennylane>=0.34"]         # variational quantum members (KQUBIT, KSENSE, KQERN, KQROSS...)
 dev = ["pytest>=7"]
+all = ["kronos-fusion-ml[nn,ml,data,plot,quantum]"]   # everything needed to run all 39 surrogates
 
 [project.urls]
 Homepage = "https://www.kronosfusionenergy.com/kodex"
